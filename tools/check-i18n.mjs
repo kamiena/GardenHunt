@@ -14,7 +14,10 @@ const sandbox = { window: {} };
 vm.runInNewContext(src, sandbox);
 const { languages, strings } = sandbox.window.GH_I18N;
 
-const keys = new Set(['meta.title', 'meta.description', 'ui.screenshot']);
+// JavaScript からだけ使うキー（index.html に日本語の原文が無いので i18n.js の ja にも必要）
+const jsOnly = ['ui.screenshot', 'movie.comic.title', 'media.less'];
+const keys = new Set(['meta.title', 'meta.description', ...jsOnly]);
+for (const m of html.matchAll(/data-title-key="([^"]+)"/g)) keys.add(m[1]);
 for (const m of html.matchAll(/data-i18n(?:-html)?="([^"]+)"/g)) keys.add(m[1]);
 for (const m of html.matchAll(/data-i18n-attr="([^"]+)"/g)) {
   for (const pair of m[1].split(';')) {
@@ -27,6 +30,8 @@ for (const m of html.matchAll(/data-i18n-attr="([^"]+)"/g)) {
 const shared = new Set(['ui.buyShort']);
 
 let problems = 0;
+const missingJa = jsOnly.filter((k) => !(k in (strings.ja || {})));
+if (missingJa.length) { problems += missingJa.length; console.log(`[ja] missing JS-only keys: ${missingJa.join(', ')}`); }
 for (const { code } of languages) {
   if (code === 'ja') continue;
   const dict = strings[code] || {};

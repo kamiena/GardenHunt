@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ガーデンハント（Garden Hunt）公式サイト｜ドットイート風ヌメヌメ×おにごっこアクション</title>
   <meta name="description" content="曲がり角には気を付けて…。ナメツムリの少女「メイナ」が庭園迷路を駆け回り、エネミーから逃げつつスライムを集める！ドットイート風ヌメヌメ×おにごっこアクション『ガーデンハント』、Steamにて好評配信中。">
-  <meta name="theme-color" content="#2b95ea">
+  <meta name="theme-color" content="#e0f0fd">
   <meta name="color-scheme" content="light">
 
   <!-- OGP：公開URLが決まったら og:url / og:image を絶対URL（https://〜）に書き換えてください -->
@@ -102,30 +102,22 @@
     <symbol id="i-drop" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5c3.6 4.6 6.5 8.2 6.5 11.8a6.5 6.5 0 0 1-13 0C5.5 10.7 8.4 7.1 12 2.5z"/><path d="M9.3 14.2a2.9 2.9 0 0 0 2.2 3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".8"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.8"/></g></symbol>
     <symbol id="i-slime" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3.2c1.1 0 1.9.7 2.1 1.5.3-.4.8-.6 1.3-.5 1 .1 1.6 1 1.4 2 2.8 1.6 4.6 4.6 4.6 8.2 0 1.5-.4 2.8-1 3.9-.6 1-1.7 1.5-2.9 1.5H6.5c-1.2 0-2.3-.5-2.9-1.5-.6-1.1-1-2.4-1-3.9 0-4.7 3.4-8.6 7.8-9.3.2-1.1.9-1.9 1.6-1.9z"/><circle cx="9.3" cy="12.4" r="1.4" fill="#fff"/><circle cx="14.7" cy="12.4" r="1.4" fill="#fff"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5 7.8 4.5 4 4.5v13c3.8 0 6.3.5 8 2 1.7-1.5 4.2-2 8-2v-13c-3.8 0-6.3.5-8 2z"/><path d="M12 6.5v13"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" d="M12 3.2l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.5l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8.5 8.5"/></g></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h11a1 1 0 0 1 1 1V19a1.5 1.5 0 0 0 3 0V9h-3"/><path d="M5 4.5a1 1 0 0 0-1 1V18a1.5 1.5 0 0 0 1.5 1.5H18.5"/><path d="M7.5 8.5h6M7.5 12h6M7.5 15.5h4"/></g></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6v.1"/></g></symbol>
   </svg>
 
   <a class="skip-link" href="#main" data-i18n="ui.skip">本文へスキップ</a>
 
-  <!-- ========== ヘッダー ========== -->
+  <!-- ========== ヘッダー（ロゴはキービジュアルが見えている間は隠れ、スクロールすると表示） ========== -->
   <header class="site-header" id="site-header">
     <div class="site-header__inner">
-      <a class="brand" href="#top" aria-label="Garden Hunt">
-        <span class="bubbly brand__logo" data-text="Garden Hunt"><span>Garden Hunt</span></span>
+      <a class="brand" href="#top" data-brand data-i18n-attr="aria-label:ui.top" aria-label="ページトップへ">
+        <span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span>
       </a>
-
-      <nav class="gnav" aria-label="Main">
-        <ul class="gnav__list">
-          <li><a href="#about" data-i18n="nav.about">ゲーム概要</a></li>
-          <li><a href="#story" data-i18n="nav.story">ストーリー</a></li>
-          <li><a href="#features" data-i18n="nav.features">特徴</a></li>
-          <li><a href="#characters" data-i18n="nav.characters">キャラクター</a></li>
-          <li><a href="#screenshots" data-i18n="nav.screenshots">スクリーンショット</a></li>
-          <li><a href="#movie" data-i18n="nav.movie">ムービー</a></li>
-          <li><a href="#news" data-i18n="nav.news">ニュース</a></li>
-          <li><a href="#media" data-i18n="nav.media">掲載メディア</a></li>
-          <li><a href="#info" data-i18n="nav.info">製品情報</a></li>
-        </ul>
-      </nav>
 
       <div class="site-header__tools">
         <div class="lang" data-lang-switcher>
@@ -137,44 +129,57 @@
           <ul class="lang__menu" id="lang-menu" role="menu" hidden data-lang-menu></ul>
         </div>
 
-        <a class="btn btn--steam btn--sm js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
+        <a class="btn btn--sky btn--sm header-steam js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
           <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
-          <span data-i18n="ui.buyShort">Steam</span>
+          <span>Steam</span>
         </a>
 
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" data-menu-btn data-i18n-attr="aria-label:ui.menu" aria-label="メニュー">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
           <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          <span class="menu-btn__label">MENU</span>
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- スマホ用メニュー -->
-    <div class="drawer" id="drawer" hidden data-drawer>
-      <nav aria-label="Mobile">
-        <ul class="drawer__list">
-          <li><a href="#about" data-i18n="nav.about">ゲーム概要</a></li>
-          <li><a href="#story" data-i18n="nav.story">ストーリー</a></li>
-          <li><a href="#features" data-i18n="nav.features">特徴</a></li>
-          <li><a href="#characters" data-i18n="nav.characters">キャラクター</a></li>
-          <li><a href="#screenshots" data-i18n="nav.screenshots">スクリーンショット</a></li>
-          <li><a href="#movie" data-i18n="nav.movie">ムービー</a></li>
-          <li><a href="#news" data-i18n="nav.news">ニュース</a></li>
-          <li><a href="#media" data-i18n="nav.media">掲載メディア</a></li>
-          <li><a href="#info" data-i18n="nav.info">製品情報</a></li>
+  <!-- ========== メニュー（全画面ポップアップ） ========== -->
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-labelledby="menu-title" hidden data-menu>
+    <div class="menu__panel">
+      <div class="menu__head">
+        <p class="menu__title" id="menu-title"><span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span><span class="sr-only">MENU</span></p>
+        <button class="menu__close" type="button" data-menu-close data-i18n-attr="aria-label:ui.close" aria-label="閉じる">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <nav aria-label="Menu">
+        <ul class="menu__grid">
+          <li><a href="#movie"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span class="menu__en">MOVIE</span><span data-i18n="nav.movie">ムービー</span></a></li>
+          <li><a href="#about"><svg class="icon" aria-hidden="true"><use href="#i-slime"/></svg><span class="menu__en">ABOUT</span><span data-i18n="nav.about">ゲーム概要</span></a></li>
+          <li><a href="#story"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span class="menu__en">STORY</span><span data-i18n="nav.story">ストーリー</span></a></li>
+          <li><a href="#system"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><span class="menu__en">SYSTEM</span><span data-i18n="nav.system">ゲームの特徴</span></a></li>
+          <li><a href="#characters"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span class="menu__en">CHARACTER</span><span data-i18n="nav.characters">キャラクター</span></a></li>
+          <li><a href="#cast"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span class="menu__en">CAST &amp; STAFF</span><span data-i18n="nav.cast">キャスト＆スタッフ</span></a></li>
+          <li><a href="#screenshots"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg><span class="menu__en">SCREENSHOTS</span><span data-i18n="nav.screenshots">スクリーンショット</span></a></li>
+          <li><a href="#media"><svg class="icon" aria-hidden="true"><use href="#i-news"/></svg><span class="menu__en">MEDIA</span><span data-i18n="nav.media">掲載メディア</span></a></li>
+          <li><a href="#info"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span class="menu__en">INFO</span><span data-i18n="nav.info">製品情報</span></a></li>
         </ul>
       </nav>
-      <a class="btn btn--steam drawer__cta js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
+      <a class="btn btn--primary menu__cta js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
         <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
         <span data-i18n="ui.buy">Steamで購入する</span>
       </a>
+      <div class="menu__foot">
+        <p class="menu__label"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Language</p>
+        <ul class="menu__langs" data-menu-langs></ul>
+      </div>
     </div>
-  </header>
+  </div>
 
   <main id="main">
     <!-- ========== ヒーロー ========== -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <h1 class="sr-only" id="hero-title" data-i18n="hero.h1">ガーデンハント（Garden Hunt）</h1>
-      <div class="hero__visual">
+      <div class="hero__visual" data-hero-visual>
         <picture>
           <source type="image/webp" srcset="assets/img/keyvisual-768.webp 768w, assets/img/keyvisual-1280.webp 1280w, assets/img/keyvisual-1920.webp 1920w" sizes="100vw">
           <img src="assets/img/keyvisual-1920.webp" width="1920" height="1080" fetchpriority="high" decoding="async"
@@ -183,30 +188,76 @@
         </picture>
       </div>
 
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track" data-ticker>
+          <span data-i18n="ticker.1">2026.1.16 Steamにて好評配信中！</span>
+          <span data-i18n="ticker.2">ドットイート風ヌメヌメ×おにごっこアクション</span>
+          <span data-i18n="ticker.3">日本語フルボイス／9言語対応</span>
+          <span data-i18n="ticker.4">ボイスコミック第1話 公開中</span>
+        </div>
+      </div>
+
       <div class="hero__band">
-        <span class="bubble" style="--x:6%;--y:18%;--s:26px;--d:0s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:14%;--y:70%;--s:14px;--d:1.2s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:88%;--y:22%;--s:34px;--d:.6s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:94%;--y:66%;--s:16px;--d:2s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:74%;--y:84%;--s:12px;--d:1.6s" aria-hidden="true"></span>
+        <span class="bubble" style="--x:5%;--y:22%;--s:22px;--d:0s" aria-hidden="true"></span>
+        <span class="bubble" style="--x:12%;--y:74%;--s:12px;--d:1.2s" aria-hidden="true"></span>
+        <span class="bubble" style="--x:90%;--y:18%;--s:28px;--d:.6s" aria-hidden="true"></span>
+        <span class="bubble" style="--x:95%;--y:70%;--s:14px;--d:2s" aria-hidden="true"></span>
         <div class="container hero__inner">
           <p class="hero__catch" data-i18n="hero.catch">曲がり角には気を付けて…</p>
-          <p class="hero__lead" data-i18n-html="hero.lead">ナメツムリが庭園迷路を駆け回り、エネミーから逃げつつ、スライムを集める！<br><span class="nw">ドットイート風ヌメヌメ×</span><span class="nw">おにごっこアクション！</span></p>
+          <p class="hero__lead" data-i18n-html="hero.lead"><span class="line">ナメツムリが庭園迷路を駆け回り、</span><span class="line">エネミーから逃げつつ、スライムを集める！</span><span class="line">ドットイート風ヌメヌメ×おにごっこアクション！</span></p>
           <ul class="hero__chips">
-            <li class="chip chip--hot"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-steam"/></svg><span data-i18n="hero.status">Steam（PC）で好評配信中！</span></li>
-            <li class="chip" data-i18n="hero.date">2026.1.16 配信開始</li>
+            <li class="chip chip--hot"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-steam"/></svg><span data-i18n="hero.status">Steam（PC）好評配信中</span></li>
             <li class="chip" data-i18n="hero.price">500円（税込）</li>
+            <li class="chip" data-i18n="hero.voice">日本語フルボイス</li>
           </ul>
-          <div class="hero__cta">
-            <a class="btn btn--coat btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
-              <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
-              <span data-i18n="ui.buy">Steamで購入する</span>
-            </a>
-            <a class="btn btn--ghost btn--lg" href="#movie">
-              <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
-              <span data-i18n="ui.watch">PVを見る</span>
+          <a class="btn btn--primary btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
+            <span data-i18n="ui.buy">Steamで購入する</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ムービー ========== -->
+    <section class="section movie" id="movie" aria-labelledby="movie-title">
+      <div class="container container--narrow">
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow" aria-hidden="true">MOVIE</p>
+          <h2 class="sec-title" id="movie-title" data-i18n="movie.title">ムービー</h2>
+        </header>
+
+        <div class="player reveal" data-player>
+          <div class="video" data-video>
+            <button class="video__poster" type="button" data-video-poster data-i18n-attr="aria-label:ui.play" aria-label="動画を再生">
+              <img src="assets/img/ss/01-title-s.webp" srcset="assets/img/ss/01-title-s.webp 720w, assets/img/ss/01-title.webp 1920w" sizes="(min-width: 960px) 860px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="">
+              <span class="video__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
+            </button>
+          </div>
+          <div class="player__caption">
+            <p class="player__title" data-player-title data-i18n="movie.pv.title">『ガーデンハント』ゲーム概要紹介PV</p>
+            <a class="text-link" href="https://www.youtube.com/watch?v=88wuNyMprWA" target="_blank" rel="noopener" data-player-link>
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-youtube"/></svg>
+              <span data-i18n="ui.watchYT">YouTubeで見る</span>
             </a>
           </div>
+          <ul class="player__tabs" role="tablist" data-i18n-attr="aria-label:movie.title" aria-label="ムービー">
+            <li role="presentation">
+              <button type="button" role="tab" aria-selected="true" data-tab="pv"
+                      data-yt="88wuNyMprWA" data-yt-intl="LKGu0nhfCfg" data-title-key="movie.pv.title"
+                      data-poster="assets/img/ss/01-title-s.webp" data-poster-full="assets/img/ss/01-title.webp">
+                <img src="assets/img/ss/01-title-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="">
+                <span class="player__tab-label" data-i18n="movie.tab.pv">ゲーム紹介PV</span>
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" aria-selected="false" data-tab="comic"
+                      data-yt="dxDVt_R9KJ8" data-title-key="movie.comic.title"
+                      data-poster="assets/img/movie/voicecomic-01-s.webp" data-poster-full="assets/img/movie/voicecomic-01.webp">
+                <img src="assets/img/movie/voicecomic-01-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="">
+                <span class="player__tab-label" data-i18n="movie.tab.comic">ボイスコミック 第1話</span>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -217,17 +268,18 @@
       <div class="cloud cloud--b" aria-hidden="true"></div>
       <div class="container">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="ABOUT" aria-hidden="true"><span>ABOUT</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">ABOUT</p>
           <h2 class="sec-title" id="about-title" data-i18n="about.title">ゲーム概要</h2>
         </header>
 
         <div class="about__grid">
           <div class="about__text reveal">
             <p class="speech" data-i18n="about.lead">何度もリトライしたくなる！</p>
-            <p class="about__body" data-i18n-html="about.text">ナメツムリの少女「メイナ」を操作して、生垣や壁に囲まれた庭園迷路を駆け回り、スライムを捕まえるアクションゲーム。<br>自分や敵、スライムが通ったあとに残る「ヌメリ道」が攻略のカギ。滑走移動に活用したり、足跡としてスライムの居場所を探ったりしながら、ステージクリアを目指しましょう。</p>
+            <p class="body-text" data-i18n="about.text1">ナメツムリの少女「メイナ」を操作して、生垣や壁に囲まれた庭園迷路を駆け回り、スライムを捕まえるアクションゲームです。</p>
+            <p class="body-text" data-i18n="about.text2">自分や敵、スライムが通ったあとに残る「ヌメリ道」が攻略のカギ。滑ってスピードに乗ったり、足跡をたどってスライムの居場所を探ったりしながら、ステージクリアを目指しましょう。</p>
           </div>
-          <figure class="photo photo--tilt-r about__photo reveal">
-            <img src="assets/img/ss/12-meina-close-s.webp" srcset="assets/img/ss/12-meina-close-s.webp 720w, assets/img/ss/12-meina-close.webp 1920w" sizes="(min-width: 960px) 520px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="3Dのメイナ" data-i18n-attr="alt:about.photoAlt">
+          <figure class="photo about__photo reveal">
+            <img src="assets/img/ss/12-meina-close-s.webp" srcset="assets/img/ss/12-meina-close-s.webp 720w, assets/img/ss/12-meina-close.webp 1920w" sizes="(min-width: 960px) 520px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="ゲーム画面のメイナ（3Dモデル）" data-i18n-attr="alt:about.photoAlt">
             <span class="sticker" aria-hidden="true">NUME<br>NUME!</span>
           </figure>
         </div>
@@ -236,21 +288,27 @@
         <ol class="howto">
           <li class="howto__item reveal">
             <span class="howto__num" aria-hidden="true">1</span>
-            <svg class="howto__icon" aria-hidden="true" style="color:var(--slime-500)"><use href="#i-slime"/></svg>
-            <h4 data-i18n="about.step1.title">スライムをつかまえよう</h4>
-            <p data-i18n="about.step1.text">制限時間内に、ステージにいる青いピュアスライムをすべて捕まえればクリア！</p>
+            <svg class="howto__icon" aria-hidden="true" style="color:var(--blue-400)"><use href="#i-slime"/></svg>
+            <div>
+              <h4 data-i18n="about.step1.title">スライムをつかまえよう</h4>
+              <p data-i18n="about.step1.text">制限時間内に、ステージにいる青いピュアスライムをすべて捕まえればクリア！</p>
+            </div>
           </li>
           <li class="howto__item reveal">
             <span class="howto__num" aria-hidden="true">2</span>
-            <svg class="howto__icon" aria-hidden="true" style="color:var(--grape-500)"><use href="#i-eye"/></svg>
-            <h4 data-i18n="about.step2.title">エネミーからは逃げて！</h4>
-            <p data-i18n="about.step2.text">紫色の寄生スライムに捕まらないよう、迷路を駆け抜けよう。曲がり角の先には要注意！</p>
+            <svg class="howto__icon" aria-hidden="true" style="color:var(--lav-400)"><use href="#i-eye"/></svg>
+            <div>
+              <h4 data-i18n="about.step2.title">エネミーからは逃げて！</h4>
+              <p data-i18n="about.step2.text">紫色の寄生スライムに捕まらないよう、迷路を駆け抜けよう。曲がり角の先には要注意！</p>
+            </div>
           </li>
           <li class="howto__item reveal">
             <span class="howto__num" aria-hidden="true">3</span>
-            <svg class="howto__icon" aria-hidden="true" style="color:var(--slime-400)"><use href="#i-drop"/></svg>
-            <h4 data-i18n="about.step3.title">ヌメリ道でチャージ</h4>
-            <p data-i18n="about.step3.text">ヌメヌメダッシュは水分を消費。青いヌメリ道の上にいると、ヌメヌメゲージが回復します。</p>
+            <svg class="howto__icon" aria-hidden="true" style="color:var(--blue-300)"><use href="#i-drop"/></svg>
+            <div>
+              <h4 data-i18n="about.step3.title">ヌメリ道でチャージ</h4>
+              <p data-i18n="about.step3.text">ヌメヌメダッシュは水分を消費します。青いヌメリ道の上にいると、ヌメヌメゲージが回復！</p>
+            </div>
           </li>
         </ol>
 
@@ -264,10 +322,7 @@
             <div><dt><kbd>←</kbd><kbd>→</kbd></dt><dd data-i18n="about.ctrl.turn">左右に曲がる</dd></div>
             <div><dt><kbd>↓</kbd></dt><dd data-i18n="about.ctrl.back">バックターン</dd></div>
           </dl>
-          <p class="controls__note">
-            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-keyboard"/></svg>
-            <span data-i18n="about.ctrl.note">キーボード・コントローラー（XInput）の両方で遊べます。詳しい操作はゲーム内の「ポーズメニュー＞あそびかた」をご確認ください。</span>
-          </p>
+          <p class="controls__note" data-i18n="about.ctrl.note">キーボード・コントローラー（XInput）の両方で遊べます。詳しい操作はゲーム内の「ポーズメニュー＞あそびかた」をご確認ください。</p>
         </div>
       </div>
     </section>
@@ -276,29 +331,29 @@
     <section class="section story" id="story" aria-labelledby="story-title">
       <div class="ivy" aria-hidden="true"></div>
       <div class="container">
-        <header class="sec-head sec-head--light reveal">
-          <p class="sec-eyebrow bubbly" data-text="STORY" aria-hidden="true"><span>STORY</span></p>
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow" aria-hidden="true">STORY</p>
           <h2 class="sec-title" id="story-title" data-i18n="story.title">ストーリー</h2>
         </header>
 
         <div class="story__grid">
-          <figure class="photo photo--tilt-l story__photo reveal">
-            <img src="assets/img/ss/02-story-s.webp" srcset="assets/img/ss/02-story-s.webp 720w, assets/img/ss/02-story.webp 1920w" sizes="(min-width: 960px) 560px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="ストーリーパートのマンガ演出。「わかった！ 行ってくるー！」と庭園へ向かうメイナ" data-i18n-attr="alt:story.imgAlt">
+          <figure class="photo story__photo reveal">
+            <img src="assets/img/ss/02-story-s.webp" srcset="assets/img/ss/02-story-s.webp 720w, assets/img/ss/02-story.webp 1920w" sizes="(min-width: 960px) 560px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="ストーリーパートのマンガ演出。庭園へ向かうメイナ" data-i18n-attr="alt:story.imgAlt">
           </figure>
           <div class="story__card reveal">
-            <p data-i18n-html="story.p1">「<strong>メイナ</strong>」がお出かけから帰ってくると<br><strong>ナメツムリ村</strong>のみんなが<strong>ロリディウムスライム</strong>に寄生されていた！？</p>
-            <p data-i18n-html="story.p2">唯一、無事だったナメツムリ村の「<strong>オババ</strong>」曰く、<br>村のみんなを元に戻すには、素材として<br><strong>青色のピュアスライム</strong>が必要らしい。</p>
-            <p data-i18n-html="story.p3">素材を集めるため、メイナは庭園に向かうのだった……。</p>
+            <p data-i18n-html="story.p1"><span class="ib">「<strong>メイナ</strong>」が</span><span class="ib">お出かけから帰ってくると、</span><span class="ib"><strong>ナメツムリ村</strong>のみんなが</span><span class="ib"><strong>ロリディウムスライム</strong>に</span><span class="ib">寄生されていた！？</span></p>
+            <p data-i18n-html="story.p2"><span class="ib">唯一、無事だった</span><span class="ib">ナメツムリ村の「<strong>オババ</strong>」曰く、</span><span class="ib">村のみんなを元に戻すには、</span><span class="ib">素材として</span><span class="ib"><strong>青色のピュアスライム</strong>が</span><span class="ib">必要らしい。</span></p>
+            <p class="story__last" data-i18n-html="story.p3"><span class="ib">素材を集めるため、</span><span class="ib">メイナは庭園に</span><span class="ib">向かうのだった……。</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== 特徴 ========== -->
-    <section class="section features" id="features" aria-labelledby="features-title">
+    <!-- ========== ゲームの特徴 ========== -->
+    <section class="section features" id="system" aria-labelledby="features-title">
       <div class="container">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="FEATURES" aria-hidden="true"><span>FEATURES</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">SYSTEM</p>
           <h2 class="sec-title" id="features-title" data-i18n="features.title">ゲームの特徴</h2>
         </header>
 
@@ -308,8 +363,8 @@
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">01</span>
-            <h3 class="feature__title" data-i18n-html="feat1.title">見えない先に敵がいるかもしれない…<br>おにごっこのドキドキ感</h3>
-            <div class="feature__text" data-i18n-html="feat1.text"><p>本作は、リアルなおにごっこで感じる「あの角を曲がったら…？」という緊張と開放のドキドキ感をコンセプトにしており、“追う／追われる”おにごっこの楽しさがしっかり味わえるように設計されています。</p><p>見晴らしのいい開けた場所だけでなく、壁や生垣で視界が遮られる迷路構造、さらに霧が濃くて先が見えないステージなど、環境ごとに異なるスリルがプレイヤーを待ち受けます。</p></div>
+            <h3 class="feature__title" data-i18n-html="feat1.title"><span class="ib">見えない先に</span><span class="ib">敵がいるかもしれない…</span><br><span class="ib">おにごっこのドキドキ感</span></h3>
+            <div class="feature__text" data-i18n-html="feat1.text"><p>本作は、リアルなおにごっこで感じる「あの角を曲がったら…？」という緊張と開放のドキドキ感がコンセプト。“追う／追われる”おにごっこの楽しさを、しっかり味わえるように設計されています。</p><p>見晴らしのいい開けた場所だけでなく、壁や生垣で視界が遮られる迷路、霧が濃くて先が見えないステージなど、環境ごとに異なるスリルが待ち受けます。</p></div>
           </div>
         </article>
 
@@ -319,8 +374,8 @@
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">02</span>
-            <h3 class="feature__title" data-i18n-html="feat2.title">ヌメヌメダッシュと<br>ヌメリ道の活用がカギ！</h3>
-            <div class="feature__text" data-i18n-html="feat2.text"><p>プレイヤーは「<strong>ヌメヌメダッシュ</strong>」と呼ばれる滑走移動によって、高速で移動することができますが、水分を消費するため多用はできません。</p><p>そこで重要になるのが、自分やスライム、敵が通ったあとに残る「<strong>ヌメリ道</strong>」。このヌメリ道に乗ると水分が回復し、再びダッシュが可能になります。</p><p>スライム捕獲に使うか、敵から逃げるために取っておくか──リソースの使いどころがステージ攻略のカギになります。</p></div>
+            <h3 class="feature__title" data-i18n-html="feat2.title"><span class="ib">ヌメヌメダッシュと</span><br><span class="ib">ヌメリ道の活用がカギ！</span></h3>
+            <div class="feature__text" data-i18n-html="feat2.text"><p>「<strong>ヌメヌメダッシュ</strong>」と呼ばれる滑走移動で高速に移動できますが、水分を消費するため多用はできません。</p><p>そこで重要になるのが、自分やスライム、敵が通ったあとに残る「<strong>ヌメリ道</strong>」。ヌメリ道に乗ると水分が回復し、再びダッシュが可能になります。</p><p>スライム捕獲に使うか、敵から逃げるために取っておくか──リソースの使いどころがステージ攻略のカギです。</p></div>
           </div>
         </article>
 
@@ -330,8 +385,8 @@
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">03</span>
-            <h3 class="feature__title" data-i18n-html="feat3.title">そのヌメリ道、たどっていいの？<br>敵かスライムか、運命の分かれ道</h3>
-            <div class="feature__text" data-i18n-html="feat3.text"><p>「ヌメリ道」は、プレイヤーの高速移動手段であると同時に、敵やスライムの“足跡”でもあります。</p><p>迷路を駆け回るなか、突然現れる一本のヌメリ道──それはスライムが残したものか、それとも敵のものか？ その道をたどるか否かの判断が、生存と捕獲の明暗を分ける緊張感を生み出します。</p><p>一歩先に何があるかわからない、そんな読み合いが“おにごっこ遊び”をより奥深い体験へと変えていきます。</p></div>
+            <h3 class="feature__title" data-i18n-html="feat3.title"><span class="ib">そのヌメリ道、</span><span class="ib">たどっていいの？</span><br><span class="ib">敵かスライムか、</span><span class="ib">運命の分かれ道</span></h3>
+            <div class="feature__text" data-i18n-html="feat3.text"><p>「ヌメリ道」は高速移動の手段であると同時に、敵やスライムの“足跡”でもあります。</p><p>迷路を駆け回るなか、突然現れる一本のヌメリ道──それはスライムが残したものか、それとも敵のものか？ たどるか否かの判断が、生存と捕獲の明暗を分けます。</p><p>一歩先に何があるかわからない読み合いが、“おにごっこ遊び”をより奥深い体験へと変えていきます。</p></div>
           </div>
         </article>
 
@@ -341,7 +396,7 @@
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">04</span>
-            <h3 class="feature__title" data-i18n-html="feat4.title">アジサイでFEVER TIME！<br>追われる側から、追う側へ</h3>
+            <h3 class="feature__title" data-i18n-html="feat4.title"><span class="ib">アジサイで</span><span class="ib">FEVER TIME！</span><br><span class="ib">追われる側から、</span><span class="ib">追う側へ</span></h3>
             <div class="feature__text" data-i18n-html="feat4.text"><p>庭園に咲くアジサイを取ると「<strong>FEVER TIME</strong>」に突入！ その間はエネミーに接触すると、一時的にダウンさせることができます。</p><p>逃げ回るだけじゃない、形勢逆転のチャンス。ステージごとのハイスコア更新も狙ってみよう！</p></div>
           </div>
         </article>
@@ -352,13 +407,12 @@
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">05</span>
-            <h3 class="feature__title" data-i18n-html="feat5.title">マンガ演出で展開される<br>フルボイスのストーリーパート！</h3>
-            <div class="feature__text" data-i18n-html="feat5.text"><p>ストーリーは、マンガのコマが次々表示されるような演出とフルボイスで紡がれていきます。</p><p>マンガだからこそ表現しやすい、表情の変化／カメラアングル／キャラクターの動きをしっかり活かし、メイナの可愛さをギュッ！と詰め込んだシーンを多数用意しました。</p></div>
-            <dl class="mini-credits">
-              <div><dt data-i18n="credit.manga">漫画</dt><dd data-i18n="credit.name.manga">炒芽もやし</dd></div>
-              <div><dt data-i18n="credit.meina">メイナ役</dt><dd data-i18n="credit.name.meina">柊 優花</dd></div>
-              <div><dt data-i18n="credit.obaba">オババ役</dt><dd data-i18n="credit.name.obaba">森沢 芙美</dd></div>
-            </dl>
+            <h3 class="feature__title" data-i18n-html="feat5.title"><span class="ib">マンガ演出で展開される</span><br><span class="ib">フルボイスの</span><span class="ib">ストーリーパート！</span></h3>
+            <div class="feature__text" data-i18n-html="feat5.text"><p>ストーリーは、マンガのコマが次々と表示される演出とフルボイスで紡がれていきます。</p><p>マンガだからこそ表現しやすい表情の変化やカメラアングル、キャラクターの動きを活かし、メイナの可愛さをギュッ！と詰め込んだシーンを多数用意しました。</p></div>
+            <a class="btn btn--ghost feature__link" href="#cast">
+              <svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg>
+              <span data-i18n="feat5.link">キャスト＆スタッフを見る</span>
+            </a>
           </div>
         </article>
       </div>
@@ -368,7 +422,7 @@
     <section class="section chara" id="characters" aria-labelledby="chara-title">
       <div class="container">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="CHARACTERS" aria-hidden="true"><span>CHARACTERS</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">CHARACTER</p>
           <h2 class="sec-title" id="chara-title" data-i18n="chara.title">キャラクター</h2>
         </header>
 
@@ -378,10 +432,10 @@
               <img src="assets/img/chara/meina.webp" width="700" height="1040" loading="lazy" decoding="async" alt="メイナ" data-i18n-attr="alt:chara.meina.name">
             </div>
             <div class="chara-card__body">
-              <p class="chara-card__role" data-i18n="chara.meina.role">ナメツムリの少女</p>
+              <p class="chara-card__role" data-i18n="chara.meina.role">主人公／ナメツムリの少女</p>
               <h3 class="chara-card__name" data-i18n="chara.meina.name">メイナ</h3>
-              <p class="chara-card__desc" data-i18n="chara.meina.desc">ナメツムリ村に住む、元気いっぱいの女の子。お出かけから帰ってくると、村のみんながスライムに寄生されていて……！？ 村を救うため、庭園迷路へと駆け出す。</p>
-              <p class="chara-card__cv"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mic"/></svg><span data-i18n="chara.meina.cv">CV：柊 優花</span></p>
+              <p class="cv-line"><span class="cv-badge">CV</span><span class="cv-line__name" data-i18n="cast.meina.name">柊 優花</span></p>
+              <p class="chara-card__desc" data-i18n="chara.meina.desc">ナメツムリ村に住む、元気いっぱいの女の子。お出かけから帰ってくると、村のみんながスライムに寄生されていて……！？ 村を救うため、庭園迷路へと駆け出します。</p>
             </div>
           </article>
 
@@ -392,8 +446,8 @@
             <div class="chara-card__body">
               <p class="chara-card__role" data-i18n="chara.obaba.role">ただひとり無事だった村人</p>
               <h3 class="chara-card__name" data-i18n="chara.obaba.name">オババ</h3>
-              <p class="chara-card__desc" data-i18n="chara.obaba.desc">ナメツムリ村でただひとり、スライムの寄生をまぬがれた。村のみんなを元に戻すには、素材として青色のピュアスライムが必要だとメイナに教えてくれる。</p>
-              <p class="chara-card__cv"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mic"/></svg><span data-i18n="chara.obaba.cv">CV：森沢 芙美</span></p>
+              <p class="cv-line"><span class="cv-badge">CV</span><span class="cv-line__name" data-i18n="cast.obaba.name">森沢 芙美</span></p>
+              <p class="chara-card__desc" data-i18n="chara.obaba.desc">ナメツムリ村でただひとり、スライムの寄生をまぬがれた。村のみんなを元に戻すには、青色のピュアスライムが必要だとメイナに教えてくれる。</p>
             </div>
           </article>
 
@@ -404,7 +458,7 @@
             <div class="chara-card__body">
               <p class="chara-card__role" data-i18n="chara.pure.role">捕まえるターゲット</p>
               <h3 class="chara-card__name" data-i18n="chara.pure.name">ピュアスライム</h3>
-              <p class="chara-card__desc" data-i18n="chara.pure.desc">庭園迷路にひそむ青色のスライム。村のみんなを元に戻すための大切な素材。通ったあとにはヌメリ道が残る。</p>
+              <p class="chara-card__desc" data-i18n="chara.pure.desc">庭園迷路にひそむ青色のスライム。村のみんなを元に戻すための大切な素材で、通ったあとにはヌメリ道が残る。</p>
             </div>
           </article>
 
@@ -422,165 +476,131 @@
       </div>
     </section>
 
+    <!-- ========== キャスト＆スタッフ ========== -->
+    <section class="section cast" id="cast" aria-labelledby="cast-title">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow" aria-hidden="true">CAST &amp; STAFF</p>
+          <h2 class="sec-title" id="cast-title" data-i18n="cast.title">キャスト＆スタッフ</h2>
+          <p class="sec-lead" data-i18n-html="cast.lead"><span class="ib">ストーリーパートは</span><span class="ib">マンガ演出＋フルボイス！</span><span class="ib">メイナたちに命を吹き込むキャストと、</span><span class="ib">マンガを手がけたスタッフを</span><span class="ib">ご紹介します。</span></p>
+        </header>
+
+        <div class="cast__grid">
+          <article class="person reveal">
+            <img class="person__icon" src="assets/img/chara/icon-meina.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+            <div class="person__body">
+              <p class="person__role"><span class="cv-badge">CV</span><span data-i18n="cast.meina.role">メイナ役</span></p>
+              <p class="person__name" data-i18n="cast.meina.name">柊 優花</p>
+              <p class="person__roman" data-i18n="cast.meina.sub">Yuka Hiiragi</p>
+            </div>
+          </article>
+          <article class="person reveal">
+            <img class="person__icon" src="assets/img/chara/icon-obaba.webp" width="240" height="240" loading="lazy" decoding="async" alt="">
+            <div class="person__body">
+              <p class="person__role"><span class="cv-badge">CV</span><span data-i18n="cast.obaba.role">オババ役</span></p>
+              <p class="person__name" data-i18n="cast.obaba.name">森沢 芙美</p>
+              <p class="person__roman" data-i18n="cast.obaba.sub">Fumi Morisawa</p>
+            </div>
+          </article>
+          <article class="person person--staff reveal">
+            <span class="person__icon person__icon--manga" aria-hidden="true">
+              <img src="assets/img/ss/11-manga-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="">
+            </span>
+            <div class="person__body">
+              <p class="person__role"><span class="cv-badge cv-badge--staff" data-i18n="cast.manga.badge">漫画</span><span data-i18n="cast.manga.role">ストーリーパート</span></p>
+              <p class="person__name" data-i18n="cast.manga.name">炒芽もやし</p>
+              <p class="person__roman" data-i18n="cast.manga.sub">Moya-shi Itame</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="cast__cta reveal">
+          <p data-i18n-html="cast.comic.text"><span class="ib">ふたりの声は、</span><span class="ib">ボイスコミック第1話でチェック！</span></p>
+          <a class="btn btn--primary" href="#movie" data-go-video="comic">
+            <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+            <span data-i18n="cast.comic.btn">ボイスコミック第1話を見る</span>
+          </a>
+        </div>
+
+        <article class="dev reveal">
+          <p class="dev__label">DEVELOPER</p>
+          <h3 class="dev__name" data-i18n="dev.name">クレアクラン（CREA CLAN）</h3>
+          <p class="dev__text" data-i18n="dev.text">「kawaii」をキーワードにインディーゲームを開発しているゲーム制作サークル。代表のカミエナがディレクター／プロデューサーを務め、『走れ！クレアちゃん』などの作品を手がけています。</p>
+          <ul class="dev__links">
+            <li><a href="https://sites.google.com/view/creaclan" target="_blank" rel="noopener"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="footer.site">クレアクラン公式サイト</span></a></li>
+            <li><a href="https://x.com/creaclan_game" target="_blank" rel="noopener"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg>@creaclan_game</a></li>
+            <li><a href="https://x.com/KamiEna_Game" target="_blank" rel="noopener"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg>@KamiEna_Game</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- ========== スクリーンショット ========== -->
     <section class="section shots" id="screenshots" aria-labelledby="shots-title">
       <div class="container">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="SCREENSHOTS" aria-hidden="true"><span>SCREENSHOTS</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">SCREENSHOTS</p>
           <h2 class="sec-title" id="shots-title" data-i18n="ss.title">スクリーンショット</h2>
-          <p class="sec-lead" data-i18n="ss.hint">画像をクリックすると拡大表示します</p>
+          <p class="sec-lead" data-i18n="ss.hint">画像をタップすると拡大表示します</p>
         </header>
 
         <ul class="gallery reveal" data-gallery>
-          <li class="gallery__item gallery__item--big"><button type="button" data-full="assets/img/ss/06-fever.webp"><img src="assets/img/ss/06-fever-s.webp" srcset="assets/img/ss/06-fever-s.webp 720w, assets/img/ss/06-fever.webp 1920w" sizes="(min-width: 960px) 560px, 92vw" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 1"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/01-title.webp"><img src="assets/img/ss/01-title-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 2"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/03-mission.webp"><img src="assets/img/ss/03-mission-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 3"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/07-fog.webp"><img src="assets/img/ss/07-fog-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 4"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/09-trail.webp"><img src="assets/img/ss/09-trail-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 5"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/05-dusk.webp"><img src="assets/img/ss/05-dusk-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 6"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/12-meina-close.webp"><img src="assets/img/ss/12-meina-close-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 7"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/02-story.webp"><img src="assets/img/ss/02-story-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 8"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/11-manga.webp"><img src="assets/img/ss/11-manga-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 9"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/08-maze.webp"><img src="assets/img/ss/08-maze-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 10"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/10-brick.webp"><img src="assets/img/ss/10-brick-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 11"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/04-meina.webp"><img src="assets/img/ss/04-meina-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 12"></button></li>
-          <li class="gallery__item"><button type="button" data-full="assets/img/ss/13-english.webp"><img src="assets/img/ss/13-english-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 13"></button></li>
+          <li><button type="button" data-full="assets/img/ss/06-fever.webp"><img src="assets/img/ss/06-fever-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 1"></button></li>
+          <li><button type="button" data-full="assets/img/ss/01-title.webp"><img src="assets/img/ss/01-title-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 2"></button></li>
+          <li><button type="button" data-full="assets/img/ss/03-mission.webp"><img src="assets/img/ss/03-mission-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 3"></button></li>
+          <li><button type="button" data-full="assets/img/ss/07-fog.webp"><img src="assets/img/ss/07-fog-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 4"></button></li>
+          <li><button type="button" data-full="assets/img/ss/09-trail.webp"><img src="assets/img/ss/09-trail-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 5"></button></li>
+          <li><button type="button" data-full="assets/img/ss/05-dusk.webp"><img src="assets/img/ss/05-dusk-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 6"></button></li>
+          <li><button type="button" data-full="assets/img/ss/12-meina-close.webp"><img src="assets/img/ss/12-meina-close-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 7"></button></li>
+          <li><button type="button" data-full="assets/img/ss/02-story.webp"><img src="assets/img/ss/02-story-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 8"></button></li>
+          <li><button type="button" data-full="assets/img/ss/11-manga.webp"><img src="assets/img/ss/11-manga-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 9"></button></li>
+          <li><button type="button" data-full="assets/img/ss/08-maze.webp"><img src="assets/img/ss/08-maze-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 10"></button></li>
+          <li><button type="button" data-full="assets/img/ss/10-brick.webp"><img src="assets/img/ss/10-brick-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 11"></button></li>
+          <li><button type="button" data-full="assets/img/ss/13-english.webp"><img src="assets/img/ss/13-english-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="スクリーンショット 12"></button></li>
         </ul>
-      </div>
-    </section>
-
-    <!-- ========== ムービー ========== -->
-    <section class="section movie" id="movie" aria-labelledby="movie-title">
-      <span class="bubble" style="--x:5%;--y:20%;--s:30px;--d:.3s" aria-hidden="true"></span>
-      <span class="bubble" style="--x:92%;--y:30%;--s:22px;--d:1.4s" aria-hidden="true"></span>
-      <span class="bubble" style="--x:86%;--y:82%;--s:40px;--d:.9s" aria-hidden="true"></span>
-      <span class="bubble" style="--x:10%;--y:78%;--s:16px;--d:2.1s" aria-hidden="true"></span>
-      <div class="container container--narrow">
-        <header class="sec-head sec-head--light reveal">
-          <p class="sec-eyebrow bubbly" data-text="MOVIE" aria-hidden="true"><span>MOVIE</span></p>
-          <h2 class="sec-title" id="movie-title" data-i18n="movie.title">ムービー</h2>
-        </header>
-
-        <div class="video reveal" data-youtube="88wuNyMprWA">
-          <button class="video__poster" type="button" data-i18n-attr="aria-label:ui.play" aria-label="動画を再生">
-            <img src="assets/img/ss/01-title-s.webp" srcset="assets/img/ss/01-title-s.webp 720w, assets/img/ss/01-title.webp 1920w" sizes="(min-width: 960px) 860px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="">
-            <span class="video__play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
-          </button>
-        </div>
-        <p class="video__caption reveal">
-          <span data-i18n="movie.caption">『ガーデンハント』ゲーム概要紹介PV</span>
-          <a class="text-link" href="https://www.youtube.com/watch?v=88wuNyMprWA" target="_blank" rel="noopener">
-            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-youtube"/></svg>
-            <span data-i18n="ui.watchYT">YouTubeで見る</span>
-          </a>
-        </p>
-      </div>
-    </section>
-
-    <!-- ========== ニュース ========== -->
-    <section class="section news" id="news" aria-labelledby="news-title">
-      <div class="container container--narrow">
-        <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="NEWS" aria-hidden="true"><span>NEWS</span></p>
-          <h2 class="sec-title" id="news-title" data-i18n="news.title">ニュース</h2>
-        </header>
-        <ol class="timeline reveal">
-          <li class="timeline__item timeline__item--hot">
-            <time datetime="2026-01-16">2026.01.16</time>
-            <p><a class="js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener" data-i18n="news.n4">Steam（PC）にて配信を開始しました！</a></p>
-          </li>
-          <li class="timeline__item">
-            <time datetime="2025-11-09">2025.11.09</time>
-            <p><a href="https://gamedungeon.jp/events/tokyo10/exhibit_informations/1483" target="_blank" rel="noopener" data-i18n="news.n3">インディーゲーム展示会「東京ゲームダンジョン10」に出展しました（3P-8）</a></p>
-          </li>
-          <li class="timeline__item">
-            <time datetime="2025-08-03">2025.08.03</time>
-            <p><a href="https://www.famitsu.com/article/202507/46393" target="_blank" rel="noopener" data-i18n="news.n2">インディーゲーム展示会「東京ゲームダンジョン9」に出展しました</a></p>
-          </li>
-          <li class="timeline__item">
-            <time datetime="2025-07-01">2025.07.01</time>
-            <p><a class="js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener" data-i18n="news.n1">Steamストアページを公開しました</a></p>
-          </li>
-        </ol>
       </div>
     </section>
 
     <!-- ========== 掲載メディア ========== -->
     <section class="section media" id="media" aria-labelledby="media-title">
-      <div class="container">
+      <div class="container container--narrow">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="MEDIA" aria-hidden="true"><span>MEDIA</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">MEDIA</p>
           <h2 class="sec-title" id="media-title" data-i18n="media.title">掲載メディア</h2>
-          <p class="sec-lead" data-i18n="media.lead">『ガーデンハント』を取り上げていただいたメディア・記事をご紹介します。掲載いただき、ありがとうございます！</p>
+          <p class="sec-lead" data-i18n-html="media.lead"><span class="ib">『ガーデンハント』を</span><span class="ib">取り上げていただいた</span><span class="ib">メディア・記事をご紹介します。</span><span class="ib">掲載いただき、</span><span class="ib">ありがとうございます！</span></p>
         </header>
 
-        <ul class="media-list">
-          <li class="reveal">
-            <a class="media-card" href="https://dengekionline.com/article/202601/63360" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">電撃オンライン</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2026-01-17">2026.01.17</time>
-              <span class="media-card__title">ドットイート風ヌメヌメ×おにごっこアクション『ガーデンハント』が配信。ヌメヌメシステムが戦略要素をアツくする</span>
-              <span class="media-card__url">dengekionline.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://note.com/gomabeaver/n/nda5c556d44ff" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">note（るるいえ／Steamキュレーター）</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2026-01-17">2026.01.17</time>
-              <span class="media-card__title">少女と学園城、ガーデンハント　徒然ゲーム日記　1月17日</span>
-              <span class="media-card__url">note.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://gamewith.jp/gamedb/13858/articles/52181" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">GameWith</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2026-01-16">2026.01.16</time>
-              <span class="media-card__title">『ガーデンハント』1月16日から発売開始！スライムを集めるドットイート風のヌメヌメおにごっこゲーム</span>
-              <span class="media-card__url">gamewith.jp<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://automaton-media.com/en/news/garden-slug-girl-action-masochistic-platforming-and-summer-vacation-nostalgia-5-outdoorsy-japanese-indie-games/" target="_blank" rel="noopener" lang="en">
-              <span class="media-card__meta"><span class="media-card__outlet">AUTOMATON WEST</span><span class="badge badge--en">EN</span></span>
-              <time class="media-card__date" datetime="2025-12-06">2025.12.06</time>
-              <span class="media-card__title">Garden slug-girl action, masochistic platforming and summer vacation nostalgia: 5 outdoorsy Japanese indie games</span>
-              <span class="media-card__url">automaton-media.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://www.famitsu.com/article/202507/46393" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">ファミ通.com</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2025-07-03">2025.07.03</time>
-              <span class="media-card__title">インディゲーム展示会“東京ゲームダンジョン9”入場チケットが本日（7/3）より販売開始。出展する企業・一般の全318団体のリストが公開</span>
-              <span class="media-card__url">famitsu.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://www.gamer.ne.jp/news/202507020067/" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">Gamer</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2025-07-02">2025.07.02</time>
-              <span class="media-card__title">ナメツムリの少女がスライムを追うヌメヌメおにごっこアクション「ガーデンハント」のSteamストアページが公開！誰かが通ると地面に残る「ヌメリ道」を活かしてステージクリアを目指そう</span>
-              <span class="media-card__url">gamer.ne.jp<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="media-card" href="https://www.4gamer.net/games/925/G092584/20250702004/" target="_blank" rel="noopener" lang="ja">
-              <span class="media-card__meta"><span class="media-card__outlet">4Gamer.net</span><span class="badge">JP</span></span>
-              <time class="media-card__date" datetime="2025-07-02">2025.07.02</time>
-              <span class="media-card__title">ナメツムリの少女を操作して，スライムを捕獲していく鬼ごっこアクション「ガーデンハント」，Steamストアページを公開。リリース時期は年内</span>
-              <span class="media-card__url">4gamer.net<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></span>
-            </a>
-          </li>
+        <ul class="media-list reveal" data-media-list>
+          <li><a class="media-item" href="https://gamemakers.jp/article/2026_02_13_131159/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-02-13">2026.02.13</time><span class="media-item__outlet">ゲームメーカーズ</span></span><span class="media-item__title">初開催の「SHIBUYA GAMES WEEK 2026」現地レポート！ゲームを楽しむ、そして“ゲームを通じて渋谷の街を知る”都市型ゲームフェス</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.4gamer.net/games/991/G999110/20260206031/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-02-06">2026.02.06</time><span class="media-item__outlet">4Gamer.net</span></span><span class="media-item__title">渋谷に行くなら，ふらりとゲームも楽しもう。都市型ゲームフェス「SHIBUYA GAMES WEEK」で遊べるインディーゲームまとめ</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://mudauchi.info/428906" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-01-20">2026.01.20</time><span class="media-item__outlet">ムダウチゲームズ</span></span><span class="media-item__title">『ガーデンハント』“あの角を曲がったら…？”のドキドキ感がやみつきになる！ヌメヌメ×おにごっこアクションが1月16日に配信開始。</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://dengekionline.com/article/202601/63360" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-01-17">2026.01.17</time><span class="media-item__outlet">電撃オンライン</span></span><span class="media-item__title">ドットイート風ヌメヌメ×おにごっこアクション『ガーデンハント』が配信。ヌメヌメシステムが戦略要素をアツくする</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://note.com/gomabeaver/n/nda5c556d44ff" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-01-17">2026.01.17</time><span class="media-item__outlet">note（るるいえ／Steamキュレーター）</span></span><span class="media-item__title">少女と学園城、ガーデンハント　徒然ゲーム日記　1月17日</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://gamewith.jp/gamedb/13858/articles/52181" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-01-16">2026.01.16</time><span class="media-item__outlet">GameWith</span></span><span class="media-item__title">『ガーデンハント』1月16日から発売開始！スライムを集めるドットイート風のヌメヌメおにごっこゲーム</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://automaton-media.com/en/news/garden-slug-girl-action-masochistic-platforming-and-summer-vacation-nostalgia-5-outdoorsy-japanese-indie-games/" target="_blank" rel="noopener" lang="en"><span class="media-item__meta"><time datetime="2025-12-06">2025.12.06</time><span class="media-item__outlet">AUTOMATON WEST</span><span class="badge">EN</span></span><span class="media-item__title">Garden slug-girl action, masochistic platforming and summer vacation nostalgia: 5 outdoorsy Japanese indie games</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.famitsu.com/article/202507/46393" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-07-03">2025.07.03</time><span class="media-item__outlet">ファミ通.com</span></span><span class="media-item__title">インディゲーム展示会“東京ゲームダンジョン9”入場チケットが本日（7/3）より販売開始。出展する企業・一般の全318団体のリストが公開</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.gamer.ne.jp/news/202507020067/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-07-02">2025.07.02</time><span class="media-item__outlet">Gamer</span></span><span class="media-item__title">ナメツムリの少女がスライムを追うヌメヌメおにごっこアクション「ガーデンハント」のSteamストアページが公開！誰かが通ると地面に残る「ヌメリ道」を活かしてステージクリアを目指そう</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.4gamer.net/games/925/G092584/20250702004/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-07-02">2025.07.02</time><span class="media-item__outlet">4Gamer.net</span></span><span class="media-item__title">ナメツムリの少女を操作して，スライムを捕獲していく鬼ごっこアクション「ガーデンハント」，Steamストアページを公開。リリース時期は年内</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.indie-freaks.com/2025/05/tgd8-prj-rain" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-05-16">2025.05.16</time><span class="media-item__outlet">Indie Freaks</span><span class="badge badge--prj">PRJ rain</span></span><span class="media-item__title">ヌメヌメっと滑りながら庭園迷路を駆け回るアクションゲーム『PRJ rain（仮）』ブースレポート【東京ゲームダンジョン8】</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://realsound.jp/tech/2025/05/post-2013950.html" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-05-09">2025.05.09</time><span class="media-item__outlet">リアルサウンド テック</span><span class="badge badge--prj">PRJ rain</span></span><span class="media-item__title">レトロでかわいいタワーディフェンスから、子どもの大好きな“アレ”題材のアクションまで　「東京ゲームダンジョン8」会場レポート</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+          <li><a class="media-item" href="https://www.gamespark.jp/article/2025/01/02/148188.html" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-01-02">2025.01.02</time><span class="media-item__outlet">Game*Spark</span><span class="badge badge--prj">PRJ rain</span></span><span class="media-item__title">「コミックマーケット105」インディーゲームブースレポート！ 昔ながらのイベントで出会った魅力的な作品を3本ピックアップ</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
         </ul>
+        <div class="media-more">
+          <button class="btn btn--ghost" type="button" data-media-more aria-expanded="false" hidden>
+            <span data-i18n="media.more">すべての記事を見る</span>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+        </div>
 
         <div class="media-db reveal">
+          <p class="media-db__note"><span class="badge badge--prj">PRJ rain</span> <span data-i18n="media.prj">＝開発中の仮タイトル『PRJ rain（仮）』として紹介された記事です。</span></p>
+          <p class="media-db__note" data-i18n="media.note">※記事タイトルは掲載時の原文のまま記載しています。</p>
           <h3 class="media-db__title" data-i18n="media.db">ゲームデータベース</h3>
           <ul class="media-db__list">
-            <li><a href="https://www.4gamer.net/games/925/G092584/" target="_blank" rel="noopener">4Gamer.net（PC版 ガーデンハント まとめページ）<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
-            <li><a href="https://gamewith.jp/gamedb/13858" target="_blank" rel="noopener">GameWith（『ガーデンハント』のゲーム紹介）<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
-            <li><a href="https://www.metacritic.com/game/garden-hunt/" target="_blank" rel="noopener">Metacritic（Garden Hunt）<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+            <li><a href="https://www.4gamer.net/games/925/G092584/" target="_blank" rel="noopener">4Gamer.net<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+            <li><a href="https://gamewith.jp/gamedb/13858" target="_blank" rel="noopener">GameWith<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
+            <li><a href="https://www.metacritic.com/game/garden-hunt/" target="_blank" rel="noopener">Metacritic<svg class="icon icon--sm" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
           </ul>
-          <p class="media-db__note" data-i18n="media.note">※記事タイトルは掲載時の原文のまま記載しています。</p>
         </div>
       </div>
     </section>
@@ -589,7 +609,7 @@
     <section class="section info" id="info" aria-labelledby="info-title">
       <div class="container">
         <header class="sec-head reveal">
-          <p class="sec-eyebrow bubbly" data-text="INFO" aria-hidden="true"><span>INFO</span></p>
+          <p class="sec-eyebrow" aria-hidden="true">INFO</p>
           <h2 class="sec-title" id="info-title" data-i18n="info.title">製品情報</h2>
         </header>
 
@@ -604,6 +624,8 @@
               <div><dt data-i18n="info.k.price">価格</dt><dd data-i18n="info.v.price">500円（税込）</dd></div>
               <div><dt data-i18n="info.k.players">プレイ人数</dt><dd data-i18n="info.v.players">1人</dd></div>
               <div><dt data-i18n="info.k.controls">操作</dt><dd data-i18n="info.v.controls">キーボード／コントローラー（XInput・DualSense）対応</dd></div>
+              <div><dt data-i18n="info.k.cast">キャスト</dt><dd><span data-i18n="cast.meina.role">メイナ役</span>：<span data-i18n="cast.meina.name">柊 優花</span><br><span data-i18n="cast.obaba.role">オババ役</span>：<span data-i18n="cast.obaba.name">森沢 芙美</span></dd></div>
+              <div><dt data-i18n="cast.manga.badge">漫画</dt><dd data-i18n="cast.manga.name">炒芽もやし</dd></div>
             </dl>
           </div>
 
@@ -648,16 +670,6 @@
             </div>
           </div>
         </div>
-
-        <div class="panel credits reveal">
-          <h3 class="panel__title" data-i18n="info.credits.title">クレジット</h3>
-          <dl class="credits__list">
-            <div><dt data-i18n="info.credits.dev">開発／パブリッシュ</dt><dd data-i18n="info.v.dev">クレアクラン（代表：カミエナ）</dd></div>
-            <div><dt data-i18n="credit.manga">漫画</dt><dd data-i18n="credit.name.manga">炒芽もやし</dd></div>
-            <div><dt data-i18n="credit.meina">メイナ役</dt><dd data-i18n="credit.name.meina">柊 優花</dd></div>
-            <div><dt data-i18n="credit.obaba">オババ役</dt><dd data-i18n="credit.name.obaba">森沢 芙美</dd></div>
-          </dl>
-        </div>
       </div>
     </section>
   </main>
@@ -667,8 +679,8 @@
     <div class="footer-cta">
       <div class="container footer-cta__inner reveal">
         <p class="footer-cta__title" data-i18n="footer.cta.title">さあ、庭園迷路へ！</p>
-        <p class="footer-cta__text" data-i18n="footer.cta.text">ナメツムリ村のみんなを救えるのは、メイナだけ。</p>
-        <a class="btn btn--coat btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
+        <p class="footer-cta__text" data-i18n-html="footer.cta.text"><span class="ib">ナメツムリ村のみんなを</span><span class="ib">救えるのは、メイナだけ。</span></p>
+        <a class="btn btn--primary btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
           <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
           <span data-i18n="ui.buy">Steamで購入する</span>
         </a>
@@ -679,7 +691,7 @@
       <div class="ivy" aria-hidden="true"></div>
       <div class="container footer-main__inner">
         <div class="footer-col">
-          <span class="bubbly footer-logo" data-text="Garden Hunt" aria-hidden="true"><span>Garden Hunt</span></span>
+          <a class="footer-logo" href="#top"><span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span><span class="sr-only" data-i18n="ui.top">ページトップへ</span></a>
           <p class="footer-genre" data-i18n="info.v.genre">ドットイート風 ヌメヌメ×おにごっこアクション</p>
         </div>
 
@@ -690,7 +702,6 @@
             <li><a href="https://x.com/creaclan_game" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="footer.x.crea">クレアクラン 公式X</span></a></li>
             <li><a href="https://x.com/KamiEna_Game" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="footer.x.kamiena">カミエナ X</span></a></li>
             <li><a href="https://www.youtube.com/@KamiEna_Game" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span data-i18n="footer.yt">カミエナ YouTube</span></a></li>
-            <li><a href="https://www.youtube.com/@CreaClanOfficial" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span data-i18n="footer.yt2">クレアクラン YouTube</span></a></li>
             <li><a href="https://creaclan.booth.pm/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span data-i18n="footer.booth">クレアクラン BOOTH</span></a></li>
             <li><a href="https://sites.google.com/view/creaclan" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="footer.site">クレアクラン公式サイト</span></a></li>
           </ul>
@@ -701,6 +712,7 @@
           <ul class="footer-langs" data-footer-langs></ul>
         </div>
       </div>
+      <a class="back-to-top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>BACK TO TOP</a>
       <p class="copyright"><small>© CREA CLAN / KamiEna</small></p>
     </div>
   </footer>

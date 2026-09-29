@@ -1,7 +1,7 @@
 /* =========================================================
    Garden Hunt official site
    - 多言語切り替え（日本語は index.html の本文が原文、その他は i18n.js）
-   - スマホメニュー / スクリーンショット拡大 / YouTube 遅延読み込み など
+   - メニュー / ムービー切り替え / スクリーンショット拡大 など
    ========================================================= */
 (function () {
   'use strict';
@@ -18,11 +18,15 @@
 
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+  var prefersReducedMotion = function () {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  };
 
   /* ---------------- i18n ---------------- */
 
   var metaDesc = $('meta[name="description"]');
   var ogLocale = $('meta[property="og:locale"]');
+  var langHooks = [];
 
   function attrPairs(el) {
     return el.getAttribute('data-i18n-attr').split(';').map(function (pair) {
@@ -103,6 +107,51 @@
     return String(str).replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
   }
 
+  /* 日本語：ゲーム用語の途中で改行されないようにする（「ヌメ／リ道」のような切れ方を防ぐ） */
+  var JA_TERMS = [
+    'ヌメヌメダッシュ', 'ヌメヌメゲージ', 'ヌメヌメ', 'ヌメリ道', 'ドットイート風', 'ピュアスライム', '寄生スライム',
+    'ナメツムリ村', 'ナメツムリ', 'ロリディウム', 'スライム', 'エネミー', 'アジサイ', 'FEVER TIME', 'フルボイス',
+    'ハイスコア', 'おにごっこ', 'リトライ', 'ステージ', 'クリア', 'メイナ', 'オババ', 'キャラクター', 'カメラアングル',
+    'ストーリーパート', 'ストーリー', 'コントローラー', 'キーボード', 'ポーズメニュー', 'あそびかた', 'ゲーム',
+    'マンガ', '庭園迷路', 'インディーゲーム', 'クレアクラン', 'カミエナ', 'ボイスコミック', 'アクション',
+    'スピード', 'シーン', '第1話', 'ディレクター', 'プロデューサー', 'キャスト', 'スタッフ', 'メディア'
+  ].sort(function (a, b) { return b.length - a.length; });
+  var JA_RE = new RegExp('(' + JA_TERMS.map(function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'g');
+  var SKIP_SELECTOR = '.ib, .nw, script, style, svg, noscript, .ticker, .wordmark, [lang]:not([lang="ja"]):not(html)';
+
+  function protectJapanese(scope) {
+    var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (!node.nodeValue || !JA_RE.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        JA_RE.lastIndex = 0;
+        var p = node.parentElement;
+        if (!p || p.closest(SKIP_SELECTOR)) return NodeFilter.FILTER_REJECT;
+        // flex / grid の直下の文字は、分割すると余白（gap）が入ってしまうので対象外
+        var display = getComputedStyle(p).display;
+        if (display.indexOf('flex') !== -1 || display.indexOf('grid') !== -1) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (node) {
+      var frag = document.createDocumentFragment();
+      var parts = node.nodeValue.split(JA_RE);
+      parts.forEach(function (part, i) {
+        if (!part) return;
+        if (i % 2 === 1) {
+          var span = document.createElement('span');
+          span.className = 'nw';
+          span.textContent = part;
+          frag.appendChild(span);
+        } else {
+          frag.appendChild(document.createTextNode(part));
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   var currentLang = DEFAULT_LANG;
 
   function applyLang(code, opts) {
@@ -142,10 +191,13 @@
     $$('[data-lang-menu] [data-lang]').forEach(function (b) {
       b.setAttribute('aria-checked', String(b.getAttribute('data-lang') === code));
     });
-    $$('[data-footer-langs] [data-lang]').forEach(function (a) {
+    $$('[data-footer-langs] [data-lang], [data-menu-langs] [data-lang]').forEach(function (a) {
       if (a.getAttribute('data-lang') === code) a.setAttribute('aria-current', 'true');
       else a.removeAttribute('aria-current');
     });
+
+    langHooks.forEach(function (fn) { fn(code); });
+    if (code === 'ja') protectJapanese(document.body);
 
     if (opts.persist) {
       try { localStorage.setItem(STORE_KEY, code); } catch (e) { /* ignore */ }
@@ -161,9 +213,8 @@
 
   /* ---------------- 言語メニュー ---------------- */
 
-  function buildLangMenus() {
+  function buildLangLists() {
     var menu = $('[data-lang-menu]');
-    var footer = $('[data-footer-langs]');
     LANGS.forEach(function (l) {
       if (menu) {
         var li = document.createElement('li');
@@ -178,120 +229,266 @@
         li.appendChild(b);
         menu.appendChild(li);
       }
-      if (footer) {
-        var fli = document.createElement('li');
+      $$('[data-footer-langs], [data-menu-langs]').forEach(function (list) {
+        var li = document.createElement('li');
         var a = document.createElement('a');
         a.href = '?lang=' + encodeURIComponent(l.code);
         a.setAttribute('data-lang', l.code);
         a.setAttribute('lang', l.code);
         a.textContent = l.label;
-        fli.appendChild(a);
-        footer.appendChild(fli);
-      }
+        li.appendChild(a);
+        list.appendChild(li);
+      });
     });
   }
 
   function setupLangSwitcher() {
     var wrap = $('[data-lang-switcher]');
-    if (!wrap) return;
-    var btn = $('.lang__btn', wrap);
-    var menu = $('[data-lang-menu]', wrap);
-    var items = function () { return $$('[data-lang]', menu); };
-
-    function open() {
-      menu.hidden = false;
-      btn.setAttribute('aria-expanded', 'true');
-      var checked = $('[aria-checked="true"]', menu) || items()[0];
-      if (checked) checked.focus();
+    if (wrap) {
+      var btn = $('.lang__btn', wrap);
+      var menu = $('[data-lang-menu]', wrap);
+      var items = function () { return $$('[data-lang]', menu); };
+      var open = function () {
+        menu.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        var checked = $('[aria-checked="true"]', menu) || items()[0];
+        if (checked) checked.focus();
+      };
+      var close = function (focusBtn) {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        if (focusBtn) btn.focus();
+      };
+      btn.addEventListener('click', function () { menu.hidden ? open() : close(); });
+      menu.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-lang]');
+        if (!b) return;
+        applyLang(b.getAttribute('data-lang'), { persist: true, updateUrl: true });
+        close(true);
+      });
+      menu.addEventListener('keydown', function (e) {
+        var list = items();
+        var i = list.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); list[(i + 1) % list.length].focus(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); list[(i - 1 + list.length) % list.length].focus(); }
+        else if (e.key === 'Home') { e.preventDefault(); list[0].focus(); }
+        else if (e.key === 'End') { e.preventDefault(); list[list.length - 1].focus(); }
+        else if (e.key === 'Escape') { e.preventDefault(); close(true); }
+        else if (e.key === 'Tab') { close(false); }
+      });
+      document.addEventListener('click', function (e) {
+        if (!menu.hidden && !wrap.contains(e.target)) close(false);
+      });
     }
-    function close(focusBtn) {
-      menu.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-      if (focusBtn) btn.focus();
-    }
 
-    btn.addEventListener('click', function () { menu.hidden ? open() : close(); });
-    menu.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-lang]');
-      if (!b) return;
-      applyLang(b.getAttribute('data-lang'), { persist: true, updateUrl: true });
-      close(true);
-    });
-    menu.addEventListener('keydown', function (e) {
-      var list = items();
-      var i = list.indexOf(document.activeElement);
-      if (e.key === 'ArrowDown') { e.preventDefault(); list[(i + 1) % list.length].focus(); }
-      else if (e.key === 'ArrowUp') { e.preventDefault(); list[(i - 1 + list.length) % list.length].focus(); }
-      else if (e.key === 'Home') { e.preventDefault(); list[0].focus(); }
-      else if (e.key === 'End') { e.preventDefault(); list[list.length - 1].focus(); }
-      else if (e.key === 'Escape') { e.preventDefault(); close(true); }
-      else if (e.key === 'Tab') { close(false); }
-    });
-    document.addEventListener('click', function (e) {
-      if (!menu.hidden && !wrap.contains(e.target)) close(false);
-    });
-
-    var footer = $('[data-footer-langs]');
-    if (footer) {
-      footer.addEventListener('click', function (e) {
+    $$('[data-footer-langs], [data-menu-langs]').forEach(function (list) {
+      list.addEventListener('click', function (e) {
         var a = e.target.closest('[data-lang]');
         if (!a) return;
         e.preventDefault();
         applyLang(a.getAttribute('data-lang'), { persist: true, updateUrl: true });
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        if (list.hasAttribute('data-footer-langs')) {
+          window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        }
       });
-    }
+    });
   }
 
-  function prefersReducedMotion() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-
-  /* ---------------- ヘッダー / スマホメニュー ---------------- */
+  /* ---------------- ヘッダー ---------------- */
 
   function setupHeader() {
     var header = $('#site-header');
+    var hero = $('[data-hero-visual]');
     var toTop = $('[data-to-top]');
     var onScroll = function () {
       var y = window.scrollY || window.pageYOffset;
-      if (header) header.classList.toggle('is-scrolled', y > 8);
+      if (header) {
+        header.classList.toggle('is-scrolled', y > 4);
+        // キービジュアルが画面から外れたらロゴを表示
+        var heroGone = hero ? hero.getBoundingClientRect().bottom < header.offsetHeight + 8 : y > 200;
+        header.classList.toggle('show-brand', heroGone);
+      }
       if (toTop) toTop.classList.toggle('is-visible', y > 900);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     onScroll();
-
-    var menuBtn = $('[data-menu-btn]');
-    var drawer = $('[data-drawer]');
-    if (!menuBtn || !drawer) return;
-    var setOpen = function (open) {
-      drawer.hidden = !open;
-      menuBtn.setAttribute('aria-expanded', String(open));
-      document.body.style.overflow = open ? 'hidden' : '';
-    };
-    menuBtn.addEventListener('click', function () { setOpen(drawer.hidden); });
-    drawer.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !drawer.hidden) { setOpen(false); menuBtn.focus(); }
-    });
-    window.addEventListener('resize', function () { if (window.innerWidth >= 1240 && !drawer.hidden) setOpen(false); });
   }
 
-  function setupActiveNav() {
-    if (!('IntersectionObserver' in window)) return;
-    var links = $$('.gnav__list a');
-    var byId = {};
-    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        links.forEach(function (a) { a.classList.remove('is-active'); });
-        var a = byId[entry.target.id];
-        if (a) a.classList.add('is-active');
+  /* ---------------- メニュー（全画面ポップアップ） ---------------- */
+
+  function setupMenu() {
+    var menu = $('[data-menu]');
+    var openBtn = $('[data-menu-open]');
+    if (!menu || !openBtn) return;
+    var closeBtn = $('[data-menu-close]', menu);
+    var lastFocus = null;
+
+    var focusables = function () {
+      return $$('a[href], button:not([disabled])', menu).filter(function (el) { return el.offsetParent !== null; });
+    };
+    var open = function () {
+      lastFocus = document.activeElement;
+      menu.hidden = false;
+      openBtn.setAttribute('aria-expanded', 'true');
+      root.style.overflow = 'hidden';
+      closeBtn.focus();
+    };
+    var close = function (restoreFocus) {
+      menu.hidden = true;
+      openBtn.setAttribute('aria-expanded', 'false');
+      root.style.overflow = '';
+      if (restoreFocus && lastFocus) lastFocus.focus();
+    };
+
+    openBtn.addEventListener('click', open);
+    closeBtn.addEventListener('click', function () { close(true); });
+    menu.addEventListener('click', function (e) {
+      if (e.target === menu) { close(true); return; }
+      var a = e.target.closest('a');
+      if (a && !a.hasAttribute('data-lang')) close(false);
+    });
+    menu.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { e.preventDefault(); close(true); return; }
+      if (e.key !== 'Tab') return;
+      var list = focusables();
+      if (!list.length) return;
+      var first = list[0], last = list[list.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  }
+
+  /* ---------------- 流れる告知テキスト ---------------- */
+
+  function setupTicker() {
+    var track = $('[data-ticker]');
+    if (!track) return;
+    var originals = $$('[data-i18n]', track);
+    var rebuild = function () {
+      $$('[data-clone]', track).forEach(function (n) { n.remove(); });
+      for (var i = 0; i < 5; i++) {
+        originals.forEach(function (o) {
+          var c = document.createElement('span');
+          c.textContent = o.textContent;
+          c.setAttribute('data-clone', '');
+          track.appendChild(c);
+        });
+      }
+      // 1セット分の文字量に合わせて速度を一定に
+      var setWidth = track.scrollWidth / 6;
+      track.style.animationDuration = Math.max(20, setWidth / 40) * 3 + 's';
+    };
+    langHooks.push(rebuild);
+  }
+
+  /* ---------------- ムービー ---------------- */
+
+  function setupPlayer() {
+    var player = $('[data-player]');
+    if (!player) return;
+    var box = $('[data-video]', player);
+    var titleEl = $('[data-player-title]', player);
+    var link = $('[data-player-link]', player);
+    var tabs = $$('[role="tab"]', player);
+    var current = tabs[0];
+
+    var ytId = function (tab) {
+      return currentLang !== 'ja' && tab.getAttribute('data-yt-intl') ? tab.getAttribute('data-yt-intl') : tab.getAttribute('data-yt');
+    };
+    var play = function () {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(ytId(current)) +
+        '?autoplay=1&rel=0&hl=' + encodeURIComponent(currentLang);
+      iframe.title = titleEl.textContent || 'Garden Hunt';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      box.innerHTML = '';
+      box.appendChild(iframe);
+      iframe.focus();
+    };
+    var renderPoster = function () {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video__poster';
+      btn.setAttribute('aria-label', t(currentLang, 'ui.play') || 'Play');
+      var img = document.createElement('img');
+      img.src = current.getAttribute('data-poster');
+      img.srcset = current.getAttribute('data-poster') + ' 720w, ' + current.getAttribute('data-poster-full') + ' 1280w';
+      img.sizes = '(min-width: 960px) 860px, 92vw';
+      img.alt = '';
+      img.width = 1280; img.height = 720;
+      var icon = document.createElement('span');
+      icon.className = 'video__play';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.innerHTML = '<svg class="icon"><use href="#i-play"/></svg>';
+      btn.appendChild(img);
+      btn.appendChild(icon);
+      btn.addEventListener('click', play);
+      box.innerHTML = '';
+      box.appendChild(btn);
+    };
+    var updateMeta = function () {
+      var key = current.getAttribute('data-title-key');
+      titleEl.setAttribute('data-i18n', key);
+      titleEl.textContent = t(currentLang, key);
+      link.href = 'https://www.youtube.com/watch?v=' + ytId(current);
+      if (currentLang === 'ja') protectJapanese(titleEl);
+    };
+    var select = function (tab) {
+      tabs.forEach(function (x) {
+        x.setAttribute('aria-selected', String(x === tab));
+        x.tabIndex = x === tab ? 0 : -1;
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(byId).forEach(function (id) {
-      var sec = document.getElementById(id);
-      if (sec) io.observe(sec);
+      current = tab;
+      updateMeta();
+      renderPoster();
+    };
+
+    tabs.forEach(function (tab, i) {
+      tab.tabIndex = i === 0 ? 0 : -1;
+      tab.addEventListener('click', function () { select(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        var next = tabs[(i + d + tabs.length) % tabs.length];
+        next.focus();
+        select(next);
+      });
+    });
+    var firstPoster = $('[data-video-poster]', box);
+    if (firstPoster) firstPoster.addEventListener('click', play);
+
+    // 「ボイスコミックを見る」などのボタンからタブを切り替え
+    $$('[data-go-video]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = tabs.filter(function (x) { return x.getAttribute('data-tab') === btn.getAttribute('data-go-video'); })[0];
+        if (target) select(target);
+      });
+    });
+
+    langHooks.push(function () {
+      link.href = 'https://www.youtube.com/watch?v=' + ytId(current);
+      titleEl.setAttribute('data-i18n', current.getAttribute('data-title-key'));
+      titleEl.textContent = t(currentLang, current.getAttribute('data-title-key'));
+    });
+  }
+
+  /* ---------------- 掲載メディア：もっと見る ---------------- */
+
+  function setupMediaMore() {
+    var list = $('[data-media-list]');
+    var btn = $('[data-media-more]');
+    if (!list || !btn || list.children.length <= 6) return;
+    var label = $('[data-i18n]', btn);
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var open = list.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      label.setAttribute('data-i18n', open ? 'media.less' : 'media.more');
+      label.textContent = t(currentLang, open ? 'media.less' : 'media.more');
     });
   }
 
@@ -336,16 +533,13 @@
       img.src = b.getAttribute('data-full');
       img.alt = $('img', b).alt;
       count.textContent = (index + 1) + ' / ' + buttons.length;
-      // 次の画像を先読み
       var next = new Image();
       next.src = buttons[(index + 1) % buttons.length].getAttribute('data-full');
     }
-    function open(i) {
-      show(i);
-      if (!dialog.open) dialog.showModal();
-    }
 
-    buttons.forEach(function (b, i) { b.addEventListener('click', function () { open(i); }); });
+    buttons.forEach(function (b, i) {
+      b.addEventListener('click', function () { show(i); if (!dialog.open) dialog.showModal(); });
+    });
     $('[data-lightbox-prev]', dialog).addEventListener('click', function () { show(index - 1); });
     $('[data-lightbox-next]', dialog).addEventListener('click', function () { show(index + 1); });
     $('[data-lightbox-close]', dialog).addEventListener('click', function () { dialog.close(); });
@@ -356,9 +550,7 @@
     dialog.addEventListener('click', function (e) {
       if (e.target === dialog || e.target.classList.contains('lightbox__inner')) dialog.close();
     });
-    dialog.addEventListener('close', function () {
-      if (buttons[index]) buttons[index].focus();
-    });
+    dialog.addEventListener('close', function () { if (buttons[index]) buttons[index].focus(); });
 
     var startX = null;
     dialog.addEventListener('pointerdown', function (e) { startX = e.clientX; });
@@ -370,36 +562,18 @@
     });
   }
 
-  /* ---------------- YouTube（クリックで読み込み） ---------------- */
-
-  function setupVideos() {
-    $$('[data-youtube]').forEach(function (box) {
-      var poster = $('.video__poster', box);
-      if (!poster) return;
-      poster.addEventListener('click', function () {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(box.getAttribute('data-youtube')) +
-          '?autoplay=1&rel=0&hl=' + encodeURIComponent(currentLang);
-        iframe.title = t(currentLang, 'movie.caption') || 'Garden Hunt';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.allowFullscreen = true;
-        box.replaceChild(iframe, poster);
-        iframe.focus();
-      });
-    });
-  }
-
   /* ---------------- 起動 ---------------- */
 
   captureJapanese();
-  buildLangMenus();
+  buildLangLists();
+  setupTicker();
+  setupPlayer();
   var initial = detectLang();
   applyLang(initial.code, { updateUrl: initial.fromQuery });
   setupLangSwitcher();
   setupHeader();
-  setupActiveNav();
+  setupMenu();
+  setupMediaMore();
   setupReveal();
   setupLightbox();
-  setupVideos();
 })();
