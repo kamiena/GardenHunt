@@ -116,7 +116,7 @@
   <header class="site-header" id="site-header">
     <div class="site-header__inner">
       <a class="brand" href="#top" data-brand data-i18n-attr="aria-label:ui.top" aria-label="ページトップへ">
-        <span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span>
+        <img class="brand__logo" src="assets/img/logo-320.webp" width="320" height="205" alt="Garden Hunt">
       </a>
 
       <div class="site-header__tools">
@@ -146,7 +146,7 @@
   <div class="menu" id="menu" role="dialog" aria-modal="true" aria-labelledby="menu-title" hidden data-menu>
     <div class="menu__panel">
       <div class="menu__head">
-        <p class="menu__title" id="menu-title"><span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span><span class="sr-only">MENU</span></p>
+        <p class="menu__title" id="menu-title"><img class="menu__logo" src="assets/img/logo-320.webp" width="320" height="205" alt="Garden Hunt"><span class="sr-only">MENU</span></p>
         <button class="menu__close" type="button" data-menu-close data-i18n-attr="aria-label:ui.close" aria-label="閉じる">
           <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
         </button>
@@ -160,6 +160,7 @@
           <li><a href="#characters"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span class="menu__en">CHARACTER</span><span data-i18n="nav.characters">キャラクター</span></a></li>
           <li><a href="#cast"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span class="menu__en">CAST &amp; STAFF</span><span data-i18n="nav.cast">キャスト＆スタッフ</span></a></li>
           <li><a href="#screenshots"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg><span class="menu__en">SCREENSHOTS</span><span data-i18n="nav.screenshots">スクリーンショット</span></a></li>
+          <li><a href="#letsplay"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg><span class="menu__en">LET'S PLAY</span><span data-i18n="nav.letsplay">実況動画</span></a></li>
           <li><a href="#media"><svg class="icon" aria-hidden="true"><use href="#i-news"/></svg><span class="menu__en">MEDIA</span><span data-i18n="nav.media">掲載メディア</span></a></li>
           <li><a href="#info"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span class="menu__en">INFO</span><span data-i18n="nav.info">製品情報</span></a></li>
         </ul>
@@ -561,6 +562,49 @@
       </div>
     </section>
 
+    <!-- ========== 実況プレイ動画 ========== -->
+    <section class="section letsplay" id="letsplay" aria-labelledby="lp-title">
+      <div class="container">
+        <header class="sec-head reveal">
+          <p class="sec-eyebrow" aria-hidden="true">LET'S PLAY</p>
+          <h2 class="sec-title" id="lp-title" data-i18n="lp.title">実況プレイ動画</h2>
+          <p class="sec-lead" data-i18n-html="lp.lead"><span class="ib">たくさんの配信者・実況者のみなさんに</span><span class="ib">『ガーデンハント』を遊んでいただいています。</span><span class="ib">本当にありがとうございます！</span></p>
+        </header>
+
+        <ul class="lp-list reveal" data-more-list data-more-count="6">
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=yDoQKCvtmFM" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/yDoQKCvtmFM/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">ゲーム下手くそVtuber、ガーデンハントやるぞ！！！ #天瀬モモ</span><span class="lp-card__ch">天瀬モモ Amase Momo</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=Q8o9Ltclo7Q" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/Q8o9Ltclo7Q/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">【ネタバレ注意】ユルい雰囲気でもヌルくはないヌメヌメアクション「ガーデンハント」プレイ【Steam】</span><span class="lp-card__ch">ゲーム子 / Game-ko</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=jOJGS_PJvLU" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/jOJGS_PJvLU/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">『GardenHunt』の正式リリースが来ました配信！！</span><span class="lp-card__ch">被弾の人【インディーゲーム・DL専用ゲーム紹介】</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=ZdF7rw3Yzig" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/ZdF7rw3Yzig/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">【狐森シオン】ガーデンハント</span><span class="lp-card__ch">狐森シオン</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=J_Ecp8PRLrY" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/J_Ecp8PRLrY/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">【#ワンワンバトル 】ちゃんと近所トラブルになったことがある声量を今、解き放つ【奈々々なつめぐ】</span><span class="lp-card__ch">奈々々なつめぐ</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=Nr_9BHu_sfo" target="_blank" rel="noopener" lang="en"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/Nr_9BHu_sfo/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">Garden Hunt | No Commentary Gameplay</span><span class="lp-card__ch">IndieJosh</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=o0tg4fHr5do" target="_blank" rel="noopener" lang="en"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/o0tg4fHr5do/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">Garden Hunt - Cute Anime 3D Runner - Gameplay (PC)</span><span class="lp-card__ch">Pobre Gamer</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=UTVVjEYjdUw" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/UTVVjEYjdUw/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">かわいい鬼ごっこ？！ガーデンハントを二人で攻略していくぞ！！</span><span class="lp-card__ch">露木秋風</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=zyBon23ZEBs" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/zyBon23ZEBs/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">ガーデンハントかわいい鬼ごっこ？！ガーデンハントを二人で攻略していくぞ！！　その2</span><span class="lp-card__ch">露木秋風</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=GRAf_1dQkr8" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/GRAf_1dQkr8/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">ガーデンハントかわいい鬼ごっこ？！ガーデンハントを二人で攻略していくぞ！！　その3</span><span class="lp-card__ch">露木秋風</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=GOEDtdC2C5w" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/GOEDtdC2C5w/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">ゲームニュース】ドットイート風 ヌメヌメ×おにごっこアクション『ガーデンハント』配信開始！【ドットイート風ACT・ガーデンハント】</span><span class="lp-card__ch">むらさきのゲームチャンネル</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=Z62IY5C-rz8" target="_blank" rel="noopener" lang="en"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/Z62IY5C-rz8/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">Garden Hunt? Slug Tag in the Garden!</span><span class="lp-card__ch">Nyanco Channel</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=YxMqY-vuJ_g" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/YxMqY-vuJ_g/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">【ガーデンハント】ヌメヌメしていくぅ！？</span><span class="lp-card__ch">ましろ いちょ</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=JLsGVZJ-N6o" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/JLsGVZJ-N6o/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">ガーデンハントをやっていこう</span><span class="lp-card__ch">紙銭のゲームライフ</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=tgjtuvfgWXk" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/tgjtuvfgWXk/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">『ガーデンハント』ストーリー1～ストーリー3冒頭まで【プレイ動画】</span><span class="lp-card__ch">パジェミのゲーム紹介Ch</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=_DdCMyDDk_M" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/_DdCMyDDk_M/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">コミケで買った同人ゲーをひたすらやっていく→年越し角かじり会場【MHW:IB】</span><span class="lp-card__ch">被弾の人【インディーゲーム・DL専用ゲーム紹介】</span></a></li>
+          <li><a class="lp-card" href="https://www.youtube.com/watch?v=s6zJ7B-4HUw" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/s6zJ7B-4HUw/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">【初見】ガーデンハント-GardenHunt-メイナちゃんかわいいね🐌</span><span class="lp-card__ch">higemarisa</span></a></li>
+        </ul>
+        <div class="more">
+          <button class="btn btn--ghost" type="button" data-more-btn data-more-key="lp" aria-expanded="false" hidden>
+            <span data-i18n="lp.more">すべての動画を見る</span>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+        </div>
+        <p class="lp-playlist reveal">
+          <a class="btn btn--sky" href="https://www.youtube.com/playlist?list=PL5zJtGSUvxlKUd6usWwGUE1ndCAKxiIDx" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>
+            <span data-i18n="lp.playlist">YouTubeの再生リストで見る</span>
+          </a>
+        </p>
+      </div>
+    </section>
+
     <!-- ========== 掲載メディア ========== -->
     <section class="section media" id="media" aria-labelledby="media-title">
       <div class="container container--narrow">
@@ -570,7 +614,7 @@
           <p class="sec-lead" data-i18n-html="media.lead"><span class="ib">『ガーデンハント』を</span><span class="ib">取り上げていただいた</span><span class="ib">メディア・記事をご紹介します。</span><span class="ib">掲載いただき、</span><span class="ib">ありがとうございます！</span></p>
         </header>
 
-        <ul class="media-list reveal" data-media-list>
+        <ul class="media-list reveal" data-more-list data-more-count="6">
           <li><a class="media-item" href="https://gamemakers.jp/article/2026_02_13_131159/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-02-13">2026.02.13</time><span class="media-item__outlet">ゲームメーカーズ</span></span><span class="media-item__title">初開催の「SHIBUYA GAMES WEEK 2026」現地レポート！ゲームを楽しむ、そして“ゲームを通じて渋谷の街を知る”都市型ゲームフェス</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
           <li><a class="media-item" href="https://www.4gamer.net/games/991/G999110/20260206031/" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-02-06">2026.02.06</time><span class="media-item__outlet">4Gamer.net</span></span><span class="media-item__title">渋谷に行くなら，ふらりとゲームも楽しもう。都市型ゲームフェス「SHIBUYA GAMES WEEK」で遊べるインディーゲームまとめ</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
           <li><a class="media-item" href="https://mudauchi.info/428906" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2026-01-20">2026.01.20</time><span class="media-item__outlet">ムダウチゲームズ</span></span><span class="media-item__title">『ガーデンハント』“あの角を曲がったら…？”のドキドキ感がやみつきになる！ヌメヌメ×おにごっこアクションが1月16日に配信開始。</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
@@ -585,8 +629,8 @@
           <li><a class="media-item" href="https://realsound.jp/tech/2025/05/post-2013950.html" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-05-09">2025.05.09</time><span class="media-item__outlet">リアルサウンド テック</span><span class="badge badge--prj">PRJ rain</span></span><span class="media-item__title">レトロでかわいいタワーディフェンスから、子どもの大好きな“アレ”題材のアクションまで　「東京ゲームダンジョン8」会場レポート</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
           <li><a class="media-item" href="https://www.gamespark.jp/article/2025/01/02/148188.html" target="_blank" rel="noopener" lang="ja"><span class="media-item__meta"><time datetime="2025-01-02">2025.01.02</time><span class="media-item__outlet">Game*Spark</span><span class="badge badge--prj">PRJ rain</span></span><span class="media-item__title">「コミックマーケット105」インディーゲームブースレポート！ 昔ながらのイベントで出会った魅力的な作品を3本ピックアップ</span><svg class="icon icon--sm media-item__ext" aria-hidden="true"><use href="#i-ext"/></svg></a></li>
         </ul>
-        <div class="media-more">
-          <button class="btn btn--ghost" type="button" data-media-more aria-expanded="false" hidden>
+        <div class="more">
+          <button class="btn btn--ghost" type="button" data-more-btn data-more-key="media" aria-expanded="false" hidden>
             <span data-i18n="media.more">すべての記事を見る</span>
             <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
           </button>
@@ -691,7 +735,7 @@
       <div class="ivy" aria-hidden="true"></div>
       <div class="container footer-main__inner">
         <div class="footer-col">
-          <a class="footer-logo" href="#top"><span class="wordmark" aria-hidden="true"><span class="wordmark__a">Garden</span><span class="wordmark__b">Hunt</span></span><span class="sr-only" data-i18n="ui.top">ページトップへ</span></a>
+          <a class="footer-logo" href="#top"><img src="assets/img/logo-800.webp" width="800" height="511" loading="lazy" decoding="async" alt="Garden Hunt"><span class="sr-only" data-i18n="ui.top">ページトップへ</span></a>
           <p class="footer-genre" data-i18n="info.v.genre">ドットイート風 ヌメヌメ×おにごっこアクション</p>
         </div>
 

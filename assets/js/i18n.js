@@ -23,6 +23,7 @@ window.GH_I18N = {
   strings: {
     /* ================= 日本語（JavaScript からだけ使う文言。それ以外は index.html から自動で読み込み） ================= */
     "ja": {
+      "lp.less": "閉じる",
       "ui.screenshot": "スクリーンショット {n}",
       "movie.comic.title": "【ボイスコミック】第1話 ～ナメツムリのみんながスライムに寄生されちゃった！？～",
       "media.less": "閉じる"
@@ -30,6 +31,12 @@ window.GH_I18N = {
 
     /* ================= English ================= */
     "en": {
+      "nav.letsplay": "Let's Plays",
+      "lp.title": "Let's Play Videos",
+      "lp.lead": "So many streamers and creators have played Garden Hunt. Thank you all so much!",
+      "lp.more": "Show all videos",
+      "lp.less": "Show fewer",
+      "lp.playlist": "Watch the playlist on YouTube",
       "meta.title": "Garden Hunt – Official Website | A dot-eat–style NumeNume × tag-action game",
       "meta.description": "Watch out for sharp corners… Dash through a garden maze as a slug snail, collecting slimes while dodging enemies! Garden Hunt, a gooey dot-eating style slime tag game, is out now on Steam.",
       "nav.about": "About",
@@ -186,6 +193,12 @@ window.GH_I18N = {
 
     /* ================= 简体中文 ================= */
     "zh-Hans": {
+      "nav.letsplay": "实况视频",
+      "lp.title": "实况游玩视频",
+      "lp.lead": "许多主播和实况主都游玩了《花园狩猎》，真的非常感谢大家！",
+      "lp.more": "查看全部视频",
+      "lp.less": "收起",
+      "lp.playlist": "在 YouTube 查看播放列表",
       "meta.title": "花园狩猎（Garden Hunt）官方网站｜点点吞食风 NumeNume×捉迷藏动作",
       "meta.description": "小心拐角… 滑蜗在庭园迷宫中奔跑，一边躲避敌人，一边收集史莱姆！点阵风格的黏黏躲猫猫游戏《花园狩猎》现已在 Steam 发售。",
       "nav.about": "游戏概要",
@@ -342,6 +355,12 @@ window.GH_I18N = {
 
     /* ================= 繁體中文 ================= */
     "zh-Hant": {
+      "nav.letsplay": "實況影片",
+      "lp.title": "實況遊玩影片",
+      "lp.lead": "許多實況主與直播主都玩了《花園狩獵》，真的非常感謝大家！",
+      "lp.more": "查看全部影片",
+      "lp.less": "收合",
+      "lp.playlist": "在 YouTube 觀看播放清單",
       "meta.title": "花園狩獵（Garden Hunt）官方網站｜點點吞食風 NumeNume×捉迷藏動作",
       "meta.description": "小心轉角… 滑蝸在庭園迷宮中奔馳，一邊躲避敵人，一邊收集史萊姆！點陣風格的黏黏躲貓貓遊戲《花園狩獵》現已在 Steam 上市。",
       "nav.about": "遊戲概要",
@@ -498,6 +517,12 @@ window.GH_I18N = {
 
     /* ================= 한국어 ================= */
     "ko": {
+      "nav.letsplay": "실황 영상",
+      "lp.title": "실황 플레이 영상",
+      "lp.lead": "많은 스트리머와 실황 크리에이터분들이 『가든 헌트』를 플레이해 주셨습니다. 정말 감사합니다!",
+      "lp.more": "모든 영상 보기",
+      "lp.less": "접기",
+      "lp.playlist": "YouTube 재생목록에서 보기",
       "meta.title": "가든 헌트(Garden Hunt) 공식 사이트｜도트-잇풍 NumeNume×술래잡기 액션",
       "meta.description": "코너를 돌 땐 조심하세요… 달팽이 소녀가 정원 미로를 누비며 적을 피해 슬라임을 모으는! 도트 이터 스타일의 미끄덩 술래잡기 게임 『가든 헌트』, Steam에서 절찬 판매 중.",
       "nav.about": "게임 개요",
@@ -654,6 +679,12 @@ window.GH_I18N = {
 
     /* ================= Français ================= */
     "fr": {
+      "nav.letsplay": "Let's play",
+      "lp.title": "Vidéos de let's play",
+      "lp.lead": "De nombreux streamers et créateurs ont joué à Garden Hunt. Un immense merci à toutes et à tous !",
+      "lp.more": "Voir toutes les vidéos",
+      "lp.less": "Réduire",
+      "lp.playlist": "Voir la playlist sur YouTube",
       "meta.title": "Garden Hunt (Chasse au Jardin) – Site officiel | Action NumeNume × jeu du chat façon dot-eat",
       "meta.description": "Attention aux virages serrés… Foncez dans un labyrinthe de jardin en tant qu'escargot-limace, ramassez des slimes tout en esquivant les ennemis ! Garden Hunt, un jeu de chat glu-glu façon dot-eater, est disponible sur Steam.",
       "nav.about": "Aperçu",
@@ -810,6 +841,12 @@ window.GH_I18N = {
 
     /* ================= Deutsch ================= */
     "de": {
+      "nav.letsplay": "Let's Plays",
+      "lp.title": "Let's-Play-Videos",
+      "lp.lead": "Viele Streamer und Creator haben Garden Hunt gespielt. Vielen herzlichen Dank!",
+      "lp.more": "Alle Videos anzeigen",
+      "lp.less": "Weniger anzeigen",
+      "lp.playlist": "Playlist auf YouTube ansehen",
       "meta.title": "Garden Hunt (Gartenjagd) – Offizielle Website | Dot-eat-Action NumeNume × Fangen",
       "meta.description": "Vorsicht an engen Kurven… Flitze als Nacktschnecke durch ein Gartenlabyrinth, sammle Slimes und weiche Gegnern aus! Garden Hunt – ein schleimiges Dot-Eating-Fangspiel – ist jetzt auf Steam erhältlich.",
       "nav.about": "Übersicht",
@@ -966,6 +1003,12 @@ window.GH_I18N = {
 
     /* ================= Español ================= */
     "es": {
+      "nav.letsplay": "Let's plays",
+      "lp.title": "Vídeos de let's play",
+      "lp.lead": "¡Muchísimos streamers y creadores han jugado a Garden Hunt! ¡Mil gracias a todos!",
+      "lp.more": "Ver todos los vídeos",
+      "lp.less": "Ver menos",
+      "lp.playlist": "Ver la lista en YouTube",
       "meta.title": "Garden Hunt (Caza en el Jardín) – Web oficial | Acción estilo dot-eat NumeNume × pilla-pilla",
       "meta.description": "¡Cuidado en las esquinas…! Corre por un laberinto de jardín como una babosa-caracol y recoge slimes mientras esquivas enemigos. Garden Hunt, un pegajoso juego de pilla-pilla al estilo dot-eater, ya está disponible en Steam.",
       "nav.about": "Resumen",
@@ -1122,6 +1165,12 @@ window.GH_I18N = {
 
     /* ================= Italiano ================= */
     "it": {
+      "nav.letsplay": "Let's play",
+      "lp.title": "Video let's play",
+      "lp.lead": "Tantissimi streamer e creator hanno giocato a Garden Hunt. Grazie di cuore a tutti!",
+      "lp.more": "Mostra tutti i video",
+      "lp.less": "Mostra meno",
+      "lp.playlist": "Guarda la playlist su YouTube",
       "meta.title": "Garden Hunt (Caccia nel Giardino) – Sito ufficiale | Azione dot-eat NumeNume × acchiapparella",
       "meta.description": "Attento agli angoli stretti… Sfreccia in un labirinto-giardino come una lumaca-lumacone, raccogli slime ed evita i nemici! Garden Hunt, un viscido gioco di acchiapparella in stile dot-eater, è disponibile su Steam.",
       "nav.about": "Panoramica",

@@ -43,7 +43,7 @@ tools/check-i18n.mjs    … 翻訳の抜け漏れチェック
 
 ## ページ構成
 
-ヒーロー（キービジュアル＋告知テキスト）→ ムービー → ゲーム概要／あそびかた → ストーリー → ゲームの特徴 → キャラクター → キャスト＆スタッフ → スクリーンショット → 掲載メディア → 製品情報 → フッター
+ヒーロー（キービジュアル＋告知テキスト）→ ムービー（PV／ボイスコミック第1話）→ ゲーム概要／あそびかた → ストーリー → ゲームの特徴 → キャラクター → キャスト＆スタッフ → スクリーンショット → 実況プレイ動画 → 掲載メディア → 製品情報 → フッター
 
 - 左上のロゴはキービジュアルが見えている間は隠れ、スクロールすると表示されます（押すとページトップへ）。
 - 右上の MENU（スマホは ≡）で、全画面のメニューが開きます。
@@ -68,8 +68,17 @@ tools/check-i18n.mjs    … 翻訳の抜け漏れチェック
 
 ## ロゴ画像
 
-ヘッダーとフッターのロゴは、いまは文字（GardenHunt）で表示しています。
-透過PNGのロゴをもらったら `assets/img/logo.png` として置き、`index.html` の `<span class="wordmark">…</span>` を `<img src="assets/img/logo.png" alt="Garden Hunt">` に差し替えてください。
+`assets/img/logo-320.webp`（ヘッダー・メニュー用）と `assets/img/logo-800.webp`（フッター用）は、いただいた透過ロゴから書き出したものです。
+ファビコン（`favicon.png` / `apple-touch-icon.png`）はロゴの「G」のナメツムリ部分から作っています。
+
+## 実況プレイ動画
+
+「実況プレイ動画」セクション（`index.html` の `#letsplay`）に、YouTube の再生リスト「【実況まとめ】ガーデンハント」の動画を並べています（最初の6本を表示し、残りは「すべての動画を見る」で開きます）。
+再生リストに動画が増えたら、`.lp-list` に `<li>` を追加してください（サムネイルは YouTube のものを表示しています）。
+
+```html
+<li><a class="lp-card" href="https://www.youtube.com/watch?v=動画ID" target="_blank" rel="noopener" lang="ja"><span class="lp-card__thumb"><img src="https://i.ytimg.com/vi/動画ID/mqdefault.jpg" width="320" height="180" loading="lazy" decoding="async" alt=""><svg class="icon lp-card__play" aria-hidden="true"><use href="#i-youtube"/></svg></span><span class="lp-card__title">動画タイトル</span><span class="lp-card__ch">チャンネル名</span></a></li>
+```
 
 ## 掲載メディア
 

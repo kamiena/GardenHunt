@@ -114,7 +114,7 @@
     'ハイスコア', 'おにごっこ', 'リトライ', 'ステージ', 'クリア', 'メイナ', 'オババ', 'キャラクター', 'カメラアングル',
     'ストーリーパート', 'ストーリー', 'コントローラー', 'キーボード', 'ポーズメニュー', 'あそびかた', 'ゲーム',
     'マンガ', '庭園迷路', 'インディーゲーム', 'クレアクラン', 'カミエナ', 'ボイスコミック', 'アクション',
-    'スピード', 'シーン', '第1話', 'ディレクター', 'プロデューサー', 'キャスト', 'スタッフ', 'メディア'
+    'スピード', 'シーン', '第1話', '実況', '配信者', 'ガーデンハント', '再生リスト', 'ディレクター', 'プロデューサー', 'キャスト', 'スタッフ', 'メディア'
   ].sort(function (a, b) { return b.length - a.length; });
   var JA_RE = new RegExp('(' + JA_TERMS.map(function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'g');
   var SKIP_SELECTOR = '.ib, .nw, script, style, svg, noscript, .ticker, .wordmark, [lang]:not([lang="ja"]):not(html)';
@@ -476,19 +476,23 @@
     });
   }
 
-  /* ---------------- 掲載メディア：もっと見る ---------------- */
+  /* ---------------- 掲載メディア・実況動画：もっと見る ---------------- */
 
-  function setupMediaMore() {
-    var list = $('[data-media-list]');
-    var btn = $('[data-media-more]');
-    if (!list || !btn || list.children.length <= 6) return;
-    var label = $('[data-i18n]', btn);
-    btn.hidden = false;
-    btn.addEventListener('click', function () {
-      var open = list.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-      label.setAttribute('data-i18n', open ? 'media.less' : 'media.more');
-      label.textContent = t(currentLang, open ? 'media.less' : 'media.more');
+  function setupMoreLists() {
+    $$('[data-more-list]').forEach(function (list) {
+      var wrap = list.nextElementSibling;
+      var btn = wrap && $('[data-more-btn]', wrap);
+      var count = parseInt(list.getAttribute('data-more-count'), 10) || 6;
+      if (!btn || list.children.length <= count) return;
+      var key = btn.getAttribute('data-more-key');
+      var label = $('[data-i18n]', btn);
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        var open = list.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(open));
+        label.setAttribute('data-i18n', key + (open ? '.less' : '.more'));
+        label.textContent = t(currentLang, key + (open ? '.less' : '.more'));
+      });
     });
   }
 
@@ -573,7 +577,7 @@
   setupLangSwitcher();
   setupHeader();
   setupMenu();
-  setupMediaMore();
+  setupMoreLists();
   setupReveal();
   setupLightbox();
 })();

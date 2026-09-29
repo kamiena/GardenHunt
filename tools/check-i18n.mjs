@@ -15,7 +15,7 @@ vm.runInNewContext(src, sandbox);
 const { languages, strings } = sandbox.window.GH_I18N;
 
 // JavaScript からだけ使うキー（index.html に日本語の原文が無いので i18n.js の ja にも必要）
-const jsOnly = ['ui.screenshot', 'movie.comic.title', 'media.less'];
+const jsOnly = ['ui.screenshot', 'movie.comic.title', 'media.less', 'lp.less'];
 const keys = new Set(['meta.title', 'meta.description', ...jsOnly]);
 for (const m of html.matchAll(/data-title-key="([^"]+)"/g)) keys.add(m[1]);
 for (const m of html.matchAll(/data-i18n(?:-html)?="([^"]+)"/g)) keys.add(m[1]);
