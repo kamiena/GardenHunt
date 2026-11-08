@@ -112,7 +112,7 @@
 
   <a class="skip-link" href="#main" data-i18n="ui.skip">本文へスキップ</a>
 
-  <!-- ========== ヘッダー（ロゴはキービジュアルが見えている間は隠れ、スクロールすると表示） ========== -->
+  <!-- ========== ヘッダー（キービジュアルが見えている間は隠れ、スクロールするとふわっと表示） ========== -->
   <header class="site-header" id="site-header">
     <div class="site-header__inner">
       <a class="brand" href="#top" data-brand data-i18n-attr="aria-label:ui.top" aria-label="ページトップへ">
@@ -195,26 +195,6 @@
           <span data-i18n="ticker.2">ドットイート風ヌメヌメ×おにごっこアクション</span>
           <span data-i18n="ticker.3">日本語フルボイス／9言語対応</span>
           <span data-i18n="ticker.4">ボイスコミック第1話 公開中</span>
-        </div>
-      </div>
-
-      <div class="hero__band">
-        <span class="bubble" style="--x:5%;--y:22%;--s:22px;--d:0s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:12%;--y:74%;--s:12px;--d:1.2s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:90%;--y:18%;--s:28px;--d:.6s" aria-hidden="true"></span>
-        <span class="bubble" style="--x:95%;--y:70%;--s:14px;--d:2s" aria-hidden="true"></span>
-        <div class="container hero__inner">
-          <p class="hero__catch" data-i18n="hero.catch">曲がり角には気を付けて…</p>
-          <p class="hero__lead" data-i18n-html="hero.lead"><span class="line">ナメツムリが庭園迷路を駆け回り、</span><span class="line">エネミーから逃げつつ、スライムを集める！</span><span class="line">ドットイート風ヌメヌメ×おにごっこアクション！</span></p>
-          <ul class="hero__chips">
-            <li class="chip chip--hot"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-steam"/></svg><span data-i18n="hero.status">Steam（PC）好評配信中</span></li>
-            <li class="chip" data-i18n="hero.price">500円（税込）</li>
-            <li class="chip" data-i18n="hero.voice">日本語フルボイス</li>
-          </ul>
-          <a class="btn btn--primary btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
-            <span data-i18n="ui.buy">Steamで購入する</span>
-          </a>
         </div>
       </div>
     </section>
@@ -300,7 +280,7 @@
             <svg class="howto__icon" aria-hidden="true" style="color:var(--lav-400)"><use href="#i-eye"/></svg>
             <div>
               <h4 data-i18n="about.step2.title">エネミーからは逃げて！</h4>
-              <p data-i18n="about.step2.text">紫色の寄生スライムに捕まらないよう、迷路を駆け抜けよう。曲がり角の先には要注意！</p>
+              <p data-i18n="about.step2.text">紫色のロリディウムスライムに捕まらないよう、迷路を駆け抜けよう。曲がり角の先には要注意！</p>
             </div>
           </li>
           <li class="howto__item reveal">
@@ -324,6 +304,29 @@
             <div><dt><kbd>↓</kbd></dt><dd data-i18n="about.ctrl.back">バックターン</dd></div>
           </dl>
           <p class="controls__note" data-i18n="about.ctrl.note">キーボード・コントローラー（XInput）の両方で遊べます。詳しい操作はゲーム内の「ポーズメニュー＞あそびかた」をご確認ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== キャッチコピー＋購入 ========== -->
+    <section class="catch" id="catch" aria-labelledby="catch-title">
+      <span class="bubble" style="--x:6%;--y:16%;--s:22px;--d:0s" aria-hidden="true"></span>
+      <span class="bubble" style="--x:92%;--y:12%;--s:26px;--d:.6s" aria-hidden="true"></span>
+      <span class="bubble" style="--x:88%;--y:80%;--s:14px;--d:2s" aria-hidden="true"></span>
+      <img class="catch__slime catch__slime--pure" src="assets/img/chara/pure.webp" width="600" height="518" loading="lazy" decoding="async" alt="">
+      <img class="catch__slime catch__slime--lolidium" src="assets/img/chara/lolidium.webp" width="580" height="600" loading="lazy" decoding="async" alt="">
+        <div class="container hero__inner">
+          <p class="hero__catch" id="catch-title" data-i18n="hero.catch">曲がり角には気を付けて…</p>
+          <p class="hero__lead" data-i18n-html="hero.lead"><span class="line">ナメツムリが庭園迷路を駆け回り、</span><span class="line">エネミーから逃げつつ、スライムを集める！</span><span class="line">ドットイート風ヌメヌメ×おにごっこアクション！</span></p>
+          <ul class="hero__chips">
+            <li class="chip chip--hot"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-steam"/></svg><span data-i18n="hero.status">Steam（PC）好評配信中</span></li>
+            <li class="chip" data-i18n="hero.price">500円（税込）</li>
+            <li class="chip" data-i18n="hero.voice">日本語フルボイス</li>
+          </ul>
+          <a class="btn btn--primary btn--lg js-steam-link" href="https://store.steampowered.com/app/3820430/?l=japanese" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-steam"/></svg>
+            <span data-i18n="ui.buy">Steamで購入する</span>
+          </a>
         </div>
       </div>
     </section>
@@ -360,7 +363,7 @@
 
         <article class="feature reveal">
           <figure class="feature__media photo">
-            <img src="assets/img/ss/07-fog-s.webp" srcset="assets/img/ss/07-fog-s.webp 720w, assets/img/ss/07-fog.webp 1920w" sizes="(min-width: 960px) 600px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="霧の濃いステージで、寄生スライムがメイナの行く手に現れる" data-i18n-attr="alt:feat1.alt">
+            <img src="assets/img/ss/07-fog-s.webp" srcset="assets/img/ss/07-fog-s.webp 720w, assets/img/ss/07-fog.webp 1920w" sizes="(min-width: 960px) 600px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="霧の濃いステージで、ロリディウムスライムがメイナの行く手に現れる" data-i18n-attr="alt:feat1.alt">
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">01</span>
@@ -382,7 +385,7 @@
 
         <article class="feature reveal">
           <figure class="feature__media photo">
-            <img src="assets/img/ss/06-fever-s.webp" srcset="assets/img/ss/06-fever-s.webp 720w, assets/img/ss/06-fever.webp 1920w" sizes="(min-width: 960px) 600px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="ヌメリ道の先に、スライムと寄生スライムが待ち受ける" data-i18n-attr="alt:feat3.alt">
+            <img src="assets/img/ss/06-fever-s.webp" srcset="assets/img/ss/06-fever-s.webp 720w, assets/img/ss/06-fever.webp 1920w" sizes="(min-width: 960px) 600px, 92vw" width="1920" height="1080" loading="lazy" decoding="async" alt="ヌメリ道の先に、ピュアスライムとロリディウムスライムが待ち受ける" data-i18n-attr="alt:feat3.alt">
           </figure>
           <div class="feature__body">
             <span class="feature__num" aria-hidden="true">03</span>
@@ -442,10 +445,10 @@
 
           <article class="chara-card chara-card--sub reveal">
             <div class="chara-card__img chara-card__img--manga">
-              <img src="assets/img/chara/obaba.webp" width="367" height="330" loading="lazy" decoding="async" alt="オババ" data-i18n-attr="alt:chara.obaba.name">
+              <img src="assets/img/chara/obaba.webp" width="600" height="600" loading="lazy" decoding="async" alt="オババ" data-i18n-attr="alt:chara.obaba.name">
             </div>
             <div class="chara-card__body">
-              <p class="chara-card__role" data-i18n="chara.obaba.role">ただひとり無事だった村人</p>
+              <p class="chara-card__role" data-i18n="chara.obaba.role">ナメツムリ村の村長</p>
               <h3 class="chara-card__name" data-i18n="chara.obaba.name">オババ</h3>
               <p class="cv-line"><span class="cv-badge">CV</span><span class="cv-line__name" data-i18n="cast.obaba.name">森沢 芙美</span></p>
               <p class="chara-card__desc" data-i18n="chara.obaba.desc">ナメツムリ村でただひとり、スライムの寄生をまぬがれた。村のみんなを元に戻すには、青色のピュアスライムが必要だとメイナに教えてくれる。</p>
@@ -453,8 +456,8 @@
           </article>
 
           <article class="chara-card chara-card--sub chara-card--pure reveal">
-            <div class="chara-card__img">
-              <img src="assets/img/chara/pure.webp" width="440" height="345" loading="lazy" decoding="async" alt="ピュアスライム" data-i18n-attr="alt:chara.pure.name">
+            <div class="chara-card__img chara-card__img--fig">
+              <img src="assets/img/chara/pure.webp" width="600" height="518" loading="lazy" decoding="async" alt="ピュアスライム" data-i18n-attr="alt:chara.pure.name">
             </div>
             <div class="chara-card__body">
               <p class="chara-card__role" data-i18n="chara.pure.role">捕まえるターゲット</p>
@@ -464,13 +467,13 @@
           </article>
 
           <article class="chara-card chara-card--sub chara-card--enemy reveal">
-            <div class="chara-card__img">
-              <img src="assets/img/chara/parasite.webp" width="280" height="290" loading="lazy" decoding="async" alt="寄生スライム" data-i18n-attr="alt:chara.parasite.name">
+            <div class="chara-card__img chara-card__img--fig">
+              <img src="assets/img/chara/lolidium.webp" width="580" height="600" loading="lazy" decoding="async" alt="ロリディウムスライム" data-i18n-attr="alt:chara.lolidium.name">
             </div>
             <div class="chara-card__body">
-              <p class="chara-card__role" data-i18n="chara.parasite.role">エネミー</p>
-              <h3 class="chara-card__name" data-i18n="chara.parasite.name">寄生スライム</h3>
-              <p class="chara-card__desc" data-i18n="chara.parasite.desc">ナメツムリ村のみんなに寄生した紫色のスライム。庭園をうろつき、メイナを追いかけてくる。見つけたら全力で逃げて！</p>
+              <p class="chara-card__role" data-i18n="chara.lolidium.role">エネミー</p>
+              <h3 class="chara-card__name" data-i18n="chara.lolidium.name">ロリディウムスライム</h3>
+              <p class="chara-card__desc" data-i18n="chara.lolidium.desc">ナメツムリ村のみんなに寄生した紫色のスライム。庭園をうろつき、メイナを追いかけてくる。見つけたら全力で逃げて！</p>
             </div>
           </article>
         </div>
@@ -504,9 +507,7 @@
             </div>
           </article>
           <article class="person person--staff reveal">
-            <span class="person__icon person__icon--manga" aria-hidden="true">
-              <img src="assets/img/ss/11-manga-s.webp" width="720" height="405" loading="lazy" decoding="async" alt="">
-            </span>
+            <img class="person__thumb" src="assets/img/chara/manga-panels.webp" width="480" height="312" loading="lazy" decoding="async" alt="">
             <div class="person__body">
               <p class="person__role"><span class="cv-badge cv-badge--staff" data-i18n="cast.manga.badge">漫画</span><span data-i18n="cast.manga.role">ストーリーパート</span></p>
               <p class="person__name" data-i18n="cast.manga.name">炒芽もやし</p>

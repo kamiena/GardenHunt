@@ -304,9 +304,9 @@
       var y = window.scrollY || window.pageYOffset;
       if (header) {
         header.classList.toggle('is-scrolled', y > 4);
-        // キービジュアルが画面から外れたらロゴを表示
+        // キービジュアルが画面から外れたらヘッダー全体をふわっと表示
         var heroGone = hero ? hero.getBoundingClientRect().bottom < header.offsetHeight + 8 : y > 200;
-        header.classList.toggle('show-brand', heroGone);
+        header.classList.toggle('is-shown', heroGone);
       }
       if (toTop) toTop.classList.toggle('is-visible', y > 900);
     };
