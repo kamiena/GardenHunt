@@ -119,7 +119,7 @@ tools/check-i18n.mjs    … 翻訳の抜け漏れチェック
 
 GitHub Pages の場合：リポジトリの **Settings → Pages** で、公開するブランチとフォルダ `/ (root)` を選ぶだけです。
 
-> **公開 URL が決まったら**：`index.html` の `og:image`（と必要なら `og:url`）を `https://〜/assets/img/og.jpg` のような絶対 URL に書き換えてください。X（Twitter）などでシェアしたときにキービジュアルが表示されるようになります。
+> SNS でシェアしたときのサムネイル（キービジュアル）は `index.html` の `og:image` / `twitter:image` で指定しています（公開URL `https://kamiena.github.io/GardenHunt/` の絶対パス）。独自ドメインなどに移す場合は、ここの URL も書き換えてください。
 
 ローカルで確認する場合：
 
